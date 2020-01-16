@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,10 +13,33 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('welcome', function () {
     return view('welcome');
+});
+Route::prefix('book')->group(function () {
+    //book
+    Route::post('/', 'BookController@store');
+    Route::get('/create', 'BookController@create')->name('booking');
+
+    //findbook
+    Route::get('/booked', 'BookController@show')->name('booked');
+    Route::get('/findbook', 'BookController@findBook')->name('findbook');
+
+    //calender
+    Route::post('/status-calender', 'BookController@statusCalender')->name('calender');
+
+    //update
+    Route::get('/{phone}/edit', 'BookController@edit')->name('edit');
+    Route::put('/{id}/{phone}', 'BookController@update')->name('update');
+
+    //delete
+    Route::delete('/destroy', 'BookController@destroy')->name('delete');
+
+    //listbook
+    Route::get('/', 'BookController@index')->name('ajax');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
