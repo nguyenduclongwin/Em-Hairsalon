@@ -26,7 +26,7 @@ Route::prefix('book')->group(function () {
     Route::get('/findbook', 'API\BookController@findBook')->name('findbook');
 
     //calender
-    Route::post('/status-calender', 'API\BookController@statusCalender')->name('calender');
+    Route::get('/status-calender', 'API\BookController@statusCalender')->name('calender');
 
     //update
     Route::get('/{phone}/edit', 'API\BookController@edit')->name('edit');

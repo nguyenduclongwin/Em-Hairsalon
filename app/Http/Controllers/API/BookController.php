@@ -87,12 +87,12 @@ class BookController extends BaseController
                 break;
             default;
         }
-        return view('book.book', [
+        return $this->sendResponse([
             'today' => $today,
             'tomorrow' => $tomorrow,
             'todayth' => $todayth,
             'tomorrowth' => $tomorrowth
-        ]);
+        ],"successfully");
     }
 
     /**
@@ -103,9 +103,9 @@ class BookController extends BaseController
      */
     public function store(Request $request)
     {
-
+        $input=$request->all();
         //validate form input
-        request()->validate([
+        $validator=Validator::make($input,[
             'name' => 'required|min:3|max:255',
             'gender' => 'required',
             // 'email' => 'required|email|unique:customers,email',
@@ -132,7 +132,9 @@ class BookController extends BaseController
             'date.required' => 'Vui lòng chọn ngày bạn muốn sử dụng dịch vụ. / Please select the date you want to use the service.',
             'time.required' => 'Vui lòng chọn giờ bạn muốn sử dụng dịch vụ. / Please select the time you want to use the service.',
         ]);
-
+        if($validator->fails()){
+            return $this->sendError('Validation Error.',$validator->errors());
+        }
         $valid_phone = Customer::where('phone', request("phone"))->count();
         //if phone number is exists in customers table
         if ($valid_phone > 0) {
@@ -141,7 +143,7 @@ class BookController extends BaseController
 
             //if the phone number is already book
             if ($valid_book > 0) {
-                return redirect()->back()->withInput()->withErrors(['phone' => 'Số điện thoại này đã được lên lịch. / This phone number has been scheduled. '], 'phone');
+                return $this->sendError('Validation Error.',['phone' => 'Số điện thoại này đã được lên lịch. / This phone number has been scheduled. ']);
             }
 
             //if the phone number is not book
@@ -175,7 +177,7 @@ class BookController extends BaseController
             $book->save();
         }
         $phone="phone=".request('phone');
-        return redirect()->route('booked',$phone)->withErrors(['success' => 'Đặt lịch thành công'], 'success');
+        return $this->sendResponse($phone->toArray(),'Product Created successfully');
     }
 
     /**
@@ -190,7 +192,9 @@ class BookController extends BaseController
     }
     public function show(Request $request)
     {
-        request()->validate([
+        $input=$request->all();
+        //validate form input
+        $validator=Validator::make($input,[
             'phone' => 'required|regex:/(0)[0-9]{9}/|max:10'
         ], [
             'phone.required' => 'Vui lòng nhập số điện thoại sử dụng để đặt lịch. / Please enter the phone number used to schedule.',
@@ -199,16 +203,16 @@ class BookController extends BaseController
         ]);
         $valid_phone = Customer::where('phone', $request->phone)->count();
         if ($valid_phone == 0) {
-            return redirect()->back()->withErrors(['phone' => 'Số điện thoại chưa được lên lịch, mời quý khách đặt lịch. / Phone number has not been scheduled, please schedule.'], 'phone');
+            return $this->sendError('Validation Error.',['phone' => 'Số điện thoại chưa được lên lịch, mời quý khách đặt lịch. / Phone number has not been scheduled, please schedule.']);
         } else {
             $cus_id = Customer::where('phone', $request->phone)->get('id');
             $valid_book = Book::where('cus_id', $cus_id[0]->id)->count();
             if ($valid_book == 0) {
-                return redirect()->back()->withErrors(['phone' => 'Số điện thoại chưa được lên lịch, mời quý khách đặt lịch. / Phone number has not been scheduled, please schedule.'], 'phone');
+                return $this->sendError('Validation Error.',['phone' => 'Số điện thoại chưa được lên lịch, mời quý khách đặt lịch. / Phone number has not been scheduled, please schedule.']);
             }
         }
         $booked = Customer::join('books', 'customers.id', '=', 'books.cus_id')->where('phone', $request->phone)->get();
-        return view('book.booked', compact('booked'));
+        return $this->sendResponse($booked->toArray(),'successfully');
     }
     /**
      * Show the form for editing the specified resource.
@@ -271,13 +275,13 @@ class BookController extends BaseController
                 break;
             default;
         }
-        return view('book.edit', [
+        return $this->sendResponse([
             'today' => $today,
             'tomorrow' => $tomorrow,
             'todayth' => $todayth,
             'tomorrowth' => $tomorrowth,
             'info' => $info
-        ]);
+        ],'successfully' );
     }
 
     /**
@@ -289,7 +293,8 @@ class BookController extends BaseController
      */
     public function update(Request $request, Book $book, $id, $phone)
     {
-        request()->validate([
+        $input=$request->all();
+        $validator=Validator::make($input,[
             'salon' => 'required',
             'service' => 'required',
             'date' => 'required',
@@ -300,6 +305,9 @@ class BookController extends BaseController
             'date.required' => 'Vui lòng chọn ngày bạn muốn sử dụng dịch vụ. / Please select the date you want to use the service.',
             'time.required' => 'Vui lòng chọn giờ bạn muốn sử dụng dịch vụ. / Please select the time you want to use the service.'
         ]);
+        if($validator->fails()){
+            return $this->sendError('Validation Error.',$validator->errors());
+        }
         $book = Book::find($id);
         $book->salon = request('salon');
         $book->service = implode(",", request("service"));
@@ -308,7 +316,7 @@ class BookController extends BaseController
         $book->message = request('message');
         $book->save();
         $token = csrf_token();
-        return redirect("book/booked/?$token&phone=$phone");
+        return $this->sendResponse(['token'=>$token,'phone'=>$phone],' successfully');
     }
 
     /**
@@ -322,7 +330,7 @@ class BookController extends BaseController
         if ($request->id) {
             $book = Book::find($request->id);
             $book->delete();
-            return "success";
+            return $this->sendResponse($book->toArray(),'Book delete successfully');
         }
     }
     public function statusCalender(Request $request)
@@ -340,6 +348,6 @@ class BookController extends BaseController
             $valid_calender[$i . ':00'] = Book::where('salon',$salon)->where('date', $date)->where('time', $i . ":00")->count();
             $valid_calender[$i . ':30'] = Book::where('salon',$salon)->where('date', $date)->where('time', $i . ":30")->count();
         }
-        return $valid_calender;
+        return $this->sendResponse($valid_calender,'valid_calender successfully');
     }
 }
