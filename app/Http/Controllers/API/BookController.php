@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Customer;
 use App\Book;
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\BaseController as BaseController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
 use Carbon\Carbon;
 
-class BookController extends Controller
+class BookController extends BaseController
 {
     /**
      * Display a listing of the resource.
