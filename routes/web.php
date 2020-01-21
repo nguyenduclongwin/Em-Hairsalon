@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('welcome', function () {
-    return view('welcome');
+    return view('homenew');
 });
 // Route::prefix('book')->group(function () {
 //     //book

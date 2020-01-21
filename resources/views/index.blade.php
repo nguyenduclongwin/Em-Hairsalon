@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout')
 @section('title','EM Hair Salon')
 
 @section('content')
@@ -8,19 +8,19 @@
     <div class="main_carousel" style="position: relative;">
         <div class="main-slideshow owl-carousel owl-theme">
             <div class="item" style="position: relative;">
-                <img src="{{asset('images/image_slide03.jpg')}}" alt="images carousle">
+                <img src="{{asset('images/image_slide03_02.jpg')}}" alt="images carousle">
                 <div class="overlay"></div>
                 <h2 class="title-overlay">Welcome to EM hair salon</h2>
 
             </div>
             <div class="item" style="position: relative;">
-                <img src="{{asset('images/image_slide03.jpg')}}" alt="images carousle">
+                <img src="{{asset('images/image_slide03_02.jpg')}}" alt="images carousle">
                 <div class="overlay"></div>
                 <h2 class="title-overlay">Welcome to EM hair salon</h2>
 
             </div>
             <div class="item" style="position: relative;">
-                <img src="{{asset('images/image_slide03.jpg')}}" alt="images carousle">
+                <img src="{{asset('images/image_slide03_02.jpg')}}" alt="images carousle">
                 <div class="overlay"></div>
                 <h2 class="title-overlay">Welcome to EM hair salon</h2>
 
