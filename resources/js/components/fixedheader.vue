@@ -6,7 +6,7 @@
     <!-- Start Menu Fixed -->
     <div class="big_container">
         <div class="super_container">
-            <div class="container-fluid" style="background: #1b1717;">
+            <div class="container-fluid">
                 <div class="container">
 
                     <!-- Start title previous header -->
@@ -15,11 +15,11 @@
                             <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 col">
                                 <!-- col-xl-2 col-lg-2 col-md-5 col-sm-4 col-6 -->
                                 <img class="alarm_responsive" src="/images/alarm.svg" alt="alarm_responsive_image">
-                                <h3 class="title-pre-header work-time"></span>Mon-Sun : 8h-22h </h3>
+                                <h3 class="title-pre-header work-time"><span>{{contact.worktime}}</span></h3>
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-sm-6 col-6 col ">
                                 <!-- col-xl-9 col-lg-9 col-md-5 col-sm-4 col-6  -->
-                                <h3 class="title-pre-header phone-number-responsive"><span class="fas fa-phone-alt phone-icon"></span> (+84)626262626</h3>
+                                <h3 class="title-pre-header phone-number-responsive"><span class="fas fa-phone-alt phone-icon"></span> {{contact.phone}}</h3>
                             </div>
                             <div class="col-xl-8 col-lg-8 col-md-6  col nav-cart ">
                                 <!-- col-xl-1 col-lg-1 col-sm-2 col-12 -->
@@ -45,7 +45,7 @@
         <div class="container">
             <header>
                 <nav class="navbar navbar-expand-sm " style="display: flex;">
-                    <a class="navbar-brand" href="#"><img class="Em_logo_responsive" src="/images/EM_hair_salon_logo.png" alt="Em Hair Salon logo"></a>
+                    <a class="navbar-brand" href="#"><img class="Em_logo_responsive" :src="contact.logo" alt="Em Hair Salon logo"></a>
                     <button class="navbar-toggler nav_bar_responsive" type="button" data-toggle="collapse" data-target="#collapse">
                         <span class="fas fa-bars"></span>
                     </button>
@@ -92,6 +92,22 @@ import FixedHeader from "vue-fixed-header";
 export default {
   components: {
     FixedHeader
+  },
+  data() {
+      return {
+          contact:""
+      }
+  },
+  created(){
+      this.showHeader()
+  },
+  methods:{
+      showHeader(){
+          axios.get('/api/index').then(response=>{
+              this.contact=response.data.data.contact[0]
+              
+          })
+      }
   }
 };
 </script> 

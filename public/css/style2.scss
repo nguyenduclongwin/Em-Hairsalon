@@ -47,8 +47,8 @@
     z-index: 999;
     width: 100%;
     background: #fff;
-    .super-container{
-        background: #1b1717;
+    .super_container{
+            background: #1b1717;
     }
     .col{
         padding-left: 0px;
@@ -127,20 +127,24 @@
 //End Menu Fixed
 
 .main_carousel{
-    .overlay{
-        @include bg_overlay;
-    }
-    .title-overlay{
-        font-family: 'Raleway-Thin';
-        font-weight: 1000;
-        position: absolute;
-        z-index: 999;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #fff;
-        font-size: 2.1rem;
-        text-transform: uppercase;
+    .item{
+        height: 650px;
+        .overlay{
+            @include bg_overlay;
+        }
+    
+        .title-overlay{
+            font-family: 'Raleway-Thin';
+            font-weight: 1000;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 2.1rem;
+            text-transform: uppercase;
+        }
     }
     .book-online{
         position: absolute;
@@ -410,10 +414,8 @@
 // Footer
 footer{
     margin-top: 30px;
+    background-color: #1b1717;
     color: #fff;
-    .contact-in-footer{
-        background: #000;
-    }
     h4{
         color:#bb8c4b;
         margin-top: 20px;

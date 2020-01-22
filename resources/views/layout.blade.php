@@ -32,10 +32,11 @@
 <body>
     <div id="app">
         <menu-fix></menu-fix>
+        @yield('content')
     </div>
 
 
-    @yield('content')
+    
 
 
     <!-- Start API map -->
@@ -80,16 +81,16 @@
                         <div class="introduce-item">
                             <h4>Contact us</h4>
                             <i>" Đăng nhập email hoặc facebook để nhận các thông tin mới nhất của Em Hair Salon ! "</i>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="email"></label>
                                 <input type="email" name="" id="email" placeholder="Nhập email">
-                                <!-- <button type="submit">Submit</button> -->
+                                <button type="submit">Submit</button>
                             </div>
                             <div class="form-group">
                                 <label for="email"></label>
                                 <input type="password" name="" id="email" placeholder="Mật khẩu">
                                 <button type="submit" class=" btn-success" style="padding:1px 5px;">Xong</button>
-                            </div>
+                            </div> -->
                         </div>
 
                     </div>

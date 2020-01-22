@@ -17,6 +17,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::prefix('index')->group(function () {
+    Route::get('/','API\IndexController@index');
+    Route::get('/home','API\IndexController@show');
+});
 Route::prefix('book')->group(function () {
     //book
     Route::post('/', 'API\BookController@store'); 

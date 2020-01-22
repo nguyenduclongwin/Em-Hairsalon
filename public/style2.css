@@ -14,7 +14,7 @@
   z-index: 999;
   width: 100%;
   background: #fff; }
-  .big_container .super-container {
+  .big_container .super_container {
     background: #1b1717; }
   .big_container .col {
     padding-left: 0px;
@@ -63,26 +63,28 @@
       .big_container header .main-nav-header .nav_link_menu_header:hover {
         border-bottom: 3px solid #bb8c4b; }
 
-.main_carousel .overlay {
-  position: absolute;
-  background: #000;
-  opacity: 0.7;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 8; }
-.main_carousel .title-overlay {
-  font-family: 'Raleway-Thin';
-  font-weight: 1000;
-  position: absolute;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  font-size: 2.1rem;
-  text-transform: uppercase; }
+.main_carousel .item {
+  height: 650px; }
+  .main_carousel .item .overlay {
+    position: absolute;
+    background: #000;
+    opacity: 0.7;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 8; }
+  .main_carousel .item .title-overlay {
+    font-family: 'Raleway-Thin';
+    font-weight: 1000;
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 2.1rem;
+    text-transform: uppercase; }
 .main_carousel .book-online {
   position: absolute;
   z-index: 62;
@@ -287,9 +289,8 @@
 
 footer {
   margin-top: 30px;
+  background-color: #1b1717;
   color: #fff; }
-  footer .contact-in-footer {
-    background: #000; }
   footer h4 {
     color: #bb8c4b;
     margin-top: 20px; }
