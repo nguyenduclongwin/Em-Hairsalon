@@ -12,33 +12,13 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('welcome', function () {
-    return view('homenew');
-});
-// Route::prefix('book')->group(function () {
-//     //book
-//     Route::post('/', 'BookController@store'); 
-//     Route::get('/create', 'BookController@create')->name('booking');
-
-//     //findbook
-//     Route::get('/booked', 'BookController@show')->name('booked');
-//     Route::get('/findbook', 'BookController@findBook')->name('findbook');
-
-//     //calender
-//     Route::post('/status-calender', 'BookController@statusCalender')->name('calender');
-
-//     //update
-//     Route::get('/{phone}/edit', 'BookController@edit')->name('edit');
-//     Route::put('/{id}/{phone}', 'BookController@update')->name('update');
-
-//     //delete
-//     Route::delete('/destroy', 'BookController@destroy')->name('delete');
-
-//     //listbook
-//     Route::get('/', 'BookController@index')->name('ajax');
-// });
-
+Route::redirect('/','/EM');
+Route::get('/EM','EmController@home')->name('index');
+Route::get('/about','EmController@about')->name('about');
+Route::get('/service','EmController@service')->name('service');
+Route::get('/contact','EmController@contact')->name('contact');
+Route::get('/emshop','EmController@emShop')->name('emshop');
+Route::get('/news','EmController@news')->name('news');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

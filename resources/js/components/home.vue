@@ -5,33 +5,33 @@
 
       <div class="main_carousel" style="position: relative;">
         <!-- <div class="main-slideshow owl-carousel owl-theme"> -->
-          <carousel :autoplay="true" :nav="false" :items=1 :loop="true">
+          <carousel :autoplay="true" :nav="false" :items=1>
           <div class="item" style="position: relative;">
-            <img :src="slide[0].img" alt="images carousle" class="img"/>
+            <img :src="img1" alt="images carousle" class="img">
             <div class="overlay"></div>
             <h2
               class="title-overlay wow bounceInRight"
               data-wow-duration="2s"
               data-wow-delay="0.3s"
-            > {{slide[0].content}} </h2>
+            > {{content1}} </h2>
           </div>
           <div class="item" style="position: relative;">
-            <img :src="slide[1].img" alt="images carousle" class="img"/>
+            <img :src="img2" alt="images carousle" class="img">
             <div class="overlay"></div>
             <h2
               class="title-overlay wow bounceInRight"
               data-wow-duration="2s"
               data-wow-delay="0.3s"
-            > {{slide[1].content}} </h2>
+            > {{content2}} </h2>
           </div>
           <div class="item" style="position: relative;">
-            <img :src="slide[2].img" alt="images carousle" class="img"/>
+            <img :src="img3" alt="images carousle" class="img">
             <div class="overlay"></div>
             <h2
               class="title-overlay wow bounceInRight"
               data-wow-duration="2s"
               data-wow-delay="0.3s"
-            > {{slide[2].content}} </h2>
+            > {{content3}} </h2>
           </div>
       </carousel>
 
@@ -74,94 +74,27 @@
           <i>Discount combos</i>
         </h3>
         <div class="row">
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+          <div v-for="item in combo" :key="item.id" class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="combo-sale wow slideInLeft" data-wow-duration="1s" data-wow-delay="0.1s">
               <h4 class="title-combo">
                 <!--<span class="fas fa-crown icon-king-combo"></span>-->
-                <i>Joico treatment</i>
+                <i>{{item.name_combo}}</i>
               </h4>
-              <i class="text-after-title-combo-suggestions">Sale 25%</i>
+              <i class="text-after-title-combo-suggestions">Sale {{item.sale}}%</i>
               <ul class="combo-nav">
-                <li class="combo-item">Đắp mặt nạ</li>
-                <li class="combo-item">Tẩy da chết</li>
-                <li class="combo-item">Đắp mặt nạ</li>
-                <li class="combo-item">Đắp mặt nạ</li>
+                <li class="combo-item">{{item.service_1}}</li>
+                <li class="combo-item">{{item.service_2}}</li>
+                <li class="combo-item">{{item.service_3}}</li>
+                <li class="combo-item">{{item.service_4}}</li>
+                <li class="combo-item">{{item.service_5}}</li>
+                <li class="combo-item">{{item.service_6}}</li>
               </ul>
               <div class="price-sale-off">
                 <del>
-                  <i class="before-sale-off">100$</i>
+                  <i class="before-sale-off">{{item.price}}$</i>
                 </del>
                 <h5 class="sale-off">
-                  <span>-> only</span> 75$
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="combo-sale wow slideInLeft" data-wow-duration="1.1s" data-wow-delay="0.3s">
-              <h4 class="title-combo">
-                <!--<span class="fas fa-crown icon-king-combo"></span>-->
-                <i>Olaplex treatment</i>
-              </h4>
-              <i class="text-after-title-combo-suggestions">Sale 25%</i>
-              <ul class="combo-nav">
-                <li class="combo-item">Treatment</li>
-                <li class="combo-item">hair wash</li>
-                <li class="combo-item">Head & Face massage</li>
-                <li class="combo-item">Blow dry</li>
-              </ul>
-              <div class="price-sale-off">
-                <del>
-                  <i class="before-sale-off">100$</i>
-                </del>
-                <h5 class="sale-off">
-                  <span>-> only</span> 75$
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="combo-sale wow slideInRight" data-wow-duration="1.1s" data-wow-delay="0.3s">
-              <h4 class="title-combo">
-                <!--<span class="fas fa-crown icon-king-combo"></span>-->
-                <i>Shampoo for kid</i>
-              </h4>
-              <i class="text-after-title-combo-suggestions">Sale 25%</i>
-              <ul class="combo-nav">
-                <li class="combo-item">Shampoo</li>
-                <li class="combo-item">head massage</li>
-                <li class="combo-item">face cleaning</li>
-                <li class="combo-item">style blow dry</li>
-              </ul>
-              <div class="price-sale-off">
-                <del>
-                  <i class="before-sale-off">100$</i>
-                </del>
-                <h5 class="sale-off">
-                  <span>-> only</span> 75$
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="combo-sale wow slideInRight" data-wow-duration="1s" data-wow-delay="0.1s">
-              <h4 class="title-combo">
-                <!--<span class="fas fa-crown icon-king-combo"></span>-->
-                <i>King combo</i>
-              </h4>
-              <i class="text-after-title-combo-suggestions">Sale 25%</i>
-              <ul class="combo-nav">
-                <li class="combo-item">Đắp mặt nạ</li>
-                <li class="combo-item">Tẩy da chết</li>
-                <li class="combo-item">Đắp mặt nạ</li>
-                <li class="combo-item">Đắp mặt nạ</li>
-              </ul>
-              <div class="price-sale-off">
-                <del>
-                  <i class="before-sale-off">100$</i>
-                </del>
-                <h5 class="sale-off">
-                  <span>-> only</span> 75$
+                  <span>-> only</span> {{item.price-(item.price*item.sale/100)}}$
                 </h5>
               </div>
             </div>
@@ -222,7 +155,7 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="see-all-services">
-              <a href="#" class="link-see-all-services">See all services</a>
+              <a :href="link.service" class="link-see-all-services">See all services</a>
             </div>
           </div>
         </div>
@@ -241,7 +174,7 @@
             </div>
             <div class="col-xl-12 opening-time-summary">
               <h4 class="text-after-title-open-time">
-                Opening time of Em Hair Salon - Please track the opening time of Minh Nghi Hair Salon
+                Opening time of Em Hair Salon - Please track the opening time of Em Hair Salon
                 <br />to facilitate tracking and booking.
               </h4>
               <p class="scissors">
@@ -464,9 +397,23 @@
         </div>
       </div>
     </div>
-    </div>
+    
 
     <!-- End Our Team -->
+    <!-- Start API map -->
+    <div class="container-fluid">
+        <div class="API_map">
+            <div class="row Em-hair-map">
+                <div class="col-xl-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.591203610626!2d105.83886671532784!3d21.049036892460723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abba04f05471%3A0xaacb7d8c86e3ef47!2sEm%20Hair%20Salon%201!5e0!3m2!1sen!2s!4v1578105180112!5m2!1sen!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End API map -->
+    </div>
 </template>
 
 <script>
@@ -476,7 +423,14 @@ export default {
     components: { carousel },
     data() {
       return {
-          slide:""
+          img1:"",
+          img2:"",
+          img3:"",
+          content1:"",
+          content2:"",
+          content3:"",
+          combo:"",
+          link:""
       }
   },
   created(){
@@ -485,8 +439,17 @@ export default {
   methods:{
       showHome(){
           axios.get('/api/index/home').then(response=>{
-              this.slide=response.data.data.slide
+              this.img1=response.data.data.slide[0].img,
+              this.img2=response.data.data.slide[1].img,
+              this.img3=response.data.data.slide[2].img,
+              this.content1=response.data.data.slide[0].content,
+              this.content2=response.data.data.slide[1].content,
+              this.content3=response.data.data.slide[2].content,
+              this.combo=response.data.data.combo
               
+          });
+          axios.get('api/index').then(response=>{
+            this.link=response.data.data.link
           })
       }
   }

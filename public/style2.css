@@ -62,6 +62,8 @@
         border-bottom: 3px solid #fff; }
       .big_container header .main-nav-header .nav_link_menu_header:hover {
         border-bottom: 3px solid #bb8c4b; }
+      .big_container header .main-nav-header .nav_active {
+        border-bottom: 3px solid #bb8c4b; }
 
 .main_carousel .item {
   height: 650px; }
@@ -267,13 +269,15 @@
     .our-team-cover .our-team .our-team-images {
       padding-bottom: 50px; }
       .our-team-cover .our-team .our-team-images img {
-        width: 100%; }
+        width: 100%;
+        border-radius: 10px 10px 0 0; }
       .our-team-cover .our-team .our-team-images .content-after-team-images {
         background: #bb8c4b;
         text-align: center;
         text-transform: uppercase;
         font-size: 1rem;
-        line-height: 1.5; }
+        line-height: 1.5;
+        border-radius: 0 0 10px 10px; }
         .our-team-cover .our-team .our-team-images .content-after-team-images p {
           margin-bottom: 0.5rem; }
         .our-team-cover .our-team .our-team-images .content-after-team-images .name-of-consultant {
@@ -286,6 +290,9 @@
         top: -30px;
         -webkit-transition-duration: 3s;
         transition-duration: 3s; }
+
+.API_map {
+  padding-top: 35px; }
 
 footer {
   margin-top: 30px;
@@ -301,7 +308,8 @@ footer {
     color: #fff;
     font-weight: 300; }
   footer a:hover {
-    color: #f84c4c; }
+    color: #0f0;
+    text-decoration: none; }
   footer ul {
     list-style: none; }
   footer h4 {

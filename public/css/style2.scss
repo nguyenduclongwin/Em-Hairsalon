@@ -119,6 +119,9 @@
             .nav_link_menu_header:hover{
                 border-bottom: 3px solid #bb8c4b;
             }
+            .nav_active{
+                border-bottom: 3px solid #bb8c4b;
+            }
         }
     }
 
@@ -374,6 +377,7 @@
         .our-team-images{
             img{
                 width: 100%;
+                border-radius: 10px 10px 0 0;
             }
             padding-bottom: 50px;
             .content-after-team-images{
@@ -382,6 +386,7 @@
                 text-transform: uppercase;
                 font-size: 1rem;
                 line-height: 1.5;
+                border-radius: 0 0 10px 10px;
                 p{
                     margin-bottom: 0.5rem ;
                 }
@@ -409,7 +414,10 @@
 }
 //End Our Team
 
-
+//Api_map
+.API_map{
+    padding-top:35px;
+}
 
 // Footer
 footer{
@@ -429,7 +437,8 @@ footer{
         font-weight: 300;
     }
     a:hover{
-        color: #f84c4c;
+        color: #0f0;
+        text-decoration: none;
     }
     ul{
         list-style: none;

@@ -1,8 +1,8 @@
 @extends('layout')
-@section('title','Em-Hairsalon')
+@section('title','Our services')
 
 @section('content')
-    <em-home></em-home>
+    <em-service></em-service>
 @endsection
 
 @section('scripts')

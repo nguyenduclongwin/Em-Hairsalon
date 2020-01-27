@@ -1956,6 +1956,355 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/about.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/emshop.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/emshop.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fixedheader.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fixedheader.vue?vue&type=script&lang=js& ***!
@@ -2055,6 +2404,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2062,7 +2447,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      contact: ""
+      contact: "",
+      link: "",
+      currentLocation: location.href
     };
   },
   created: function created() {
@@ -2072,8 +2459,132 @@ __webpack_require__.r(__webpack_exports__);
     showHeader: function showHeader() {
       var _this = this;
 
-      axios.get('/api/index').then(function (response) {
-        _this.contact = response.data.data.contact[0];
+      axios.get("/api/index").then(function (response) {
+        _this.contact = response.data.data.contact[0], _this.link = response.data.data.link;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/footer.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/footer.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      contact: "",
+      link: ""
+    };
+  },
+  created: function created() {
+    this.showHeader();
+  },
+  methods: {
+    showHeader: function showHeader() {
+      var _this = this;
+
+      axios.get("/api/index").then(function (response) {
+        _this.contact = response.data.data.contact, _this.link = response.data.data.link;
       });
     }
   }
@@ -2510,59 +3021,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2570,7 +3028,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      slide: ""
+      img1: "",
+      img2: "",
+      img3: "",
+      content1: "",
+      content2: "",
+      content3: "",
+      combo: "",
+      link: ""
     };
   },
   created: function created() {
@@ -2581,7 +3046,323 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/api/index/home').then(function (response) {
-        _this.slide = response.data.data.slide;
+        _this.img1 = response.data.data.slide[0].img, _this.img2 = response.data.data.slide[1].img, _this.img3 = response.data.data.slide[2].img, _this.content1 = response.data.data.slide[0].content, _this.content2 = response.data.data.slide[1].content, _this.content3 = response.data.data.slide[2].content, _this.combo = response.data.data.combo;
+      });
+      axios.get('api/index').then(function (response) {
+        _this.link = response.data.data.link;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/service.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/service.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      haircut: "",
+      hairwash: "",
+      hairdye: ""
+    };
+  },
+  created: function created() {
+    this.showService();
+  },
+  methods: {
+    showService: function showService() {
+      var _this = this;
+
+      axios.get('api/service').then(function (response) {
+        _this.haircut = response.data.data.haircut, _this.hairwash = response.data.data.hairwash, _this.hairdye = response.data.data.hairdye;
       });
     }
   }
@@ -7132,7 +7913,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.big_container.vue-fixed-header--isFixed {\r\n  position: fixed;\r\n  left: 0;\r\n  top: 0px;\r\n  /* width: 100%; */\r\n  opacity: 0.9;\r\n  -webkit-filter:alpla(opacity=90);\r\n          filter:alpla(opacity=90);\n}\r\n", ""]);
+exports.push([module.i, "\n.big_container.vue-fixed-header--isFixed {\r\n  position: fixed;\r\n  left: 0;\r\n  top: 0px;\r\n  /* width: 100%; */\r\n  opacity: 0.9;\r\n  -webkit-filter: alpla(opacity=90);\r\n          filter: alpla(opacity=90);\n}\r\n", ""]);
 
 // exports
 
@@ -38986,6 +39767,854 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about.vue?vue&type=template&id=0b0aedd2&scoped=true&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/about.vue?vue&type=template&id=0b0aedd2&scoped=true& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "about" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "mission" }, [
+          _c("h3", [_vm._v("sứ mệnh của em hair salon")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n        EM hair salon ra đời với mong muốn tạo ra môi trường thực tế để các em học viên lớp tóc đang học tập\n        tại REACH có cơ hội tiếp xúc, học hỏi để nâng cao tay nghề. Các em sẽ được trò chuyện với khách\n        hàng, hiểu về nhu cầu của khách hàng, được các stylist chuyên nghiệp đào tạo, hướng dẫn từng hoạt\n        động cụ thể.\n        Ngoài ra, 100% lợi nhuận của salon sẽ được sử dụng để hỗ trợ thêm các em học viên đang học tập tại\n        REACH.\n      "
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "us row" }, [
+          _c("div", { staticClass: "col-xl-8" }, [
+            _c("div", { staticClass: "item" }, [
+              _c("h4", [_vm._v("câu chuyện hình thành")]),
+              _vm._v(" "),
+              _c("img", {
+                attrs: {
+                  src:
+                    "/images/14463019_312845579081023_114824517682492469_n.png",
+                  alt: "image"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n            Được truyền cảm hứng từ cuộc đời của EM - một trong các cựu học viên của REACH, với sự quyết\n            tâm\n            và lòng dũng cảm em đã tìm đến khóa làm tóc tại REACH để khởi đầu cuộc đời mới sau những năm\n            tháng chịu thiệt thòi vì bạo lực gia đình. EM HAIR SALON ra đời bằng sự chung tay của các\n            tình\n            nguyện viên, các học viên và cựu học viên tài năng của REACH.\n          "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "item" }, [
+              _c("h4", [_vm._v("câu chuyện EM Hair Salon")]),
+              _vm._v(" "),
+              _c("img", {
+                attrs: {
+                  src:
+                    "/images/14590408_320559381642976_1064724381654708051_n.jpg",
+                  alt: "image",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n            EM Hair Salon is top-rated professional hair salon located on beautiful Pho Duc Chinh Street\n            in\n            Hanoi's Old Quarter.\n            Our experienced hair stylists specialise in men’s and women’s styling, cutting, colouring\n            and\n            curling services at affordable prices (see our menu in VN/ENG). They are experienced with\n            all\n            colours and types of hair, including blonde and balayage.\n            100% of profits made at the salon go towards funding vocational training for disadvantaged\n            youths studying at REACH, including victims of human trafficking and domestic violence.\n            Since\n            2004, REACH has helped improve the lives of over 15,000 young people in Vietnam.\n          "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "item" }, [
+              _c("h4", [_vm._v("cam kết")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n            Bạn sẽ được đảm bảo chất lượng về các dịch vụ chăm sóc và tạo kiểu do các nhà tạo mẫu tóc có\n            tay\n            nghề và kinh nghiệm lâu năm trực tiếp thực hiện, mọi sản phẩm sử dụng đều chính hãng. EM\n            luôn tự\n            hào vì thường xuyên nhận được phản hồi tích cực từ khách hàng trong nước cũng như nước\n            ngoài.\n          "
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-xl-4" }, [
+            _c("div", { staticClass: "item" }, [
+              _c("h4", [_vm._v("quyền sở hữu và tác giả")]),
+              _vm._v(" "),
+              _c("img", {
+                attrs: {
+                  src:
+                    "/images/14522877_312260475806200_2441242517213499303_n.jpg",
+                  alt: "image"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n            EM HAIR SALON is a social enterprise initiative of REACH, a local, Vietnamese, non-government\n            organisation specialising in vocational training and employment for Vietnam’s most\n            disadvantaged\n            youth.\n          "
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "item" }, [
+              _c("h4", [_vm._v("dịch vụ")]),
+              _vm._v(" "),
+              _c("iframe", {
+                attrs: {
+                  width: "100%",
+                  height: "auto",
+                  src: "https://www.youtube.com/embed/yX0YWLWXeDo",
+                  frameborder: "0",
+                  allow:
+                    "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+                  allowfullscreen: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n            EM Hair Salon tự hào mang đến cho khách hàng những trải nghiệm thư giãn và thoải mái nhất.\n            Đồng\n            thời luôn tiếp thu phản hồi của khách hàng cũng như cập nhật những xu thế mới để ngày càng\n            hoàn\n            thiện hơn\n          "
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/emshop.vue?vue&type=template&id=713626a9&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/emshop.vue?vue&type=template&id=713626a9&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "EM-shop" }, [
+      _c("div", { staticClass: "head-store" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-xl-12 wow rollIn" }, [
+              _c("h2", { staticClass: "main-title-Em-shop" }, [
+                _vm._v("Welcome to EM shop")
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Vao shop tich diem hang ngay de duoc giam gia")])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "show_new_products" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-xl-6 col-lg-6 col-md-12 col-sm-12-col-12" },
+              [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-xl-12" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "images/image_hair_em_shop1.jpg",
+                        alt: "image_hair_em_shop1.jpg",
+                        width: "95%"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "EM shop luon mang lai nhung san pham cho nguoi dung"
+                      )
+                    ])
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-xl-6 col-lg-6 col-md-12 col-sm-12-col-12" },
+              [
+                _c("div", { staticClass: "row section_products" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "images/images_EM_shop/shampoo_kafen1.jfif",
+                          alt: "shapoo1.jpg",
+                          width: "100%"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
+                    },
+                    [
+                      _c("p", { staticClass: "new_products" }, [_vm._v("New")]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "information-product" }, [
+                        _vm._v("Combo 4 dau goi Kafen chi "),
+                        _c("span", { staticClass: "real_price" }, [
+                          _vm._v("$46")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("button", { staticClass: "booking_now" }, [
+                        _vm._v("Add cart")
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "row section_products",
+                    staticStyle: { "margin-top": "20px" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src: "images/images_EM_shop/shampoo_goldwell.jpg",
+                            alt: "shampoo goldwell",
+                            width: "100%"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
+                      },
+                      [
+                        _c("p", { staticClass: "new_products" }, [
+                          _vm._v("New")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "information-product" }, [
+                          _vm._v("Combo 2 dau goi Goldwell chi "),
+                          _c("span", { staticClass: "real_price" }, [
+                            _vm._v("$25")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("button", { staticClass: "booking_now" }, [
+                          _vm._v("Add cart")
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "row section_products",
+                    staticStyle: {
+                      "margin-top": "20px",
+                      "padding-bottom": "10px"
+                    }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
+                      },
+                      [
+                        _c("img", {
+                          attrs: {
+                            src: "images/images_EM_shop/shampoo_keratin.jfif",
+                            alt: "shampoo keratin",
+                            width: "100%"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
+                      },
+                      [
+                        _c("p", { staticClass: "new_products" }, [
+                          _vm._v("New")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "information-product" }, [
+                          _vm._v("Combo 2 dau goi Keratin chi "),
+                          _c("span", { staticClass: "real_price" }, [
+                            _vm._v("$100")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("button", { staticClass: "booking_now" }, [
+                          _vm._v("Add cart")
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "sale_products" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              {
+                staticClass: "col-xl-12",
+                staticStyle: { "margin-top": "25px" }
+              },
+              [_c("h3", [_vm._v("Nhung san pham dang duoc sale")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "col-xl-6",
+                staticStyle: { "margin-top": "10px" }
+              },
+              [
+                _c("div", { staticClass: "row section_products" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "images/images_EM_shop/clean_face_1.jpg",
+                          alt: "clean face 1",
+                          width: "100%"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "information-product",
+                          staticStyle: { display: "inline-block" }
+                        },
+                        [_vm._v("Sản phẩm kem trị mụn đén từ The face shop")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price_product" }, [
+                        _c("span", [_vm._v("Sale off: ")]),
+                        _vm._v(" "),
+                        _c("i", [_c("del", [_vm._v("100$")])]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "real_price" }, [_vm._v("75$")])
+                      ]),
+                      _vm._v(" "),
+                      _c("button", { staticClass: "booking_now" }, [
+                        _vm._v("Add cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "col-xl-6",
+                staticStyle: { "margin-top": "10px" }
+              },
+              [
+                _c("div", { staticClass: "row section_products" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "images/images_EM_shop/clean_face_2.jfif",
+                          alt: "clean face 2",
+                          width: "100%"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "information-product",
+                          staticStyle: { display: "inline-block" }
+                        },
+                        [
+                          _vm._v(
+                            "Sản phẩm sữa rửa mặt trị mụn Acerola chiết xuất từ quả cherry"
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price_product" }, [
+                        _c("span", [_vm._v("Sale off: ")]),
+                        _vm._v(" "),
+                        _c("i", [_c("del", [_vm._v("100$")])]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "real_price" }, [_vm._v("75$")])
+                      ]),
+                      _vm._v(" "),
+                      _c("button", { staticClass: "booking_now" }, [
+                        _vm._v("Add cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "col-xl-6",
+                staticStyle: { "margin-top": "10px" }
+              },
+              [
+                _c("div", { staticClass: "row section_products" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "images/images_EM_shop/clean_face_3.jfif",
+                          alt: "clean face 3",
+                          width: "100%"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "information-product",
+                          staticStyle: { display: "inline-block" }
+                        },
+                        [
+                          _vm._v(
+                            "Sản phẩm kem trị mụn Mong bear chiết xuất từ hạt đậu nành"
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price_product" }, [
+                        _c("span", [_vm._v("Sale off: ")]),
+                        _vm._v(" "),
+                        _c("i", [_c("del", [_vm._v("100$")])]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "real_price" }, [_vm._v("75$")])
+                      ]),
+                      _vm._v(" "),
+                      _c("button", { staticClass: "booking_now" }, [
+                        _vm._v("Add cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "col-xl-6",
+                staticStyle: { "margin-top": "10px" }
+              },
+              [
+                _c("div", { staticClass: "row section_products" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: "images/images_EM_shop/shampoo_biotin1.jpg",
+                          alt: "shapoo biotin",
+                          width: "100%"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "information-product",
+                          staticStyle: { display: "inline-block" }
+                        },
+                        [_vm._v("Sữa rửa mặt Biotin")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "price_product" }, [
+                        _c("span", [_vm._v("Sale off: ")]),
+                        _vm._v(" "),
+                        _c("i", [_c("del", [_vm._v("100$")])]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "real_price" }, [_vm._v("75$")])
+                      ]),
+                      _vm._v(" "),
+                      _c("button", { staticClass: "booking_now" }, [
+                        _vm._v("Add cart")
+                      ])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "section_all_product" }, [
+        _c("div", { staticClass: "container-fluid" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-xl-12 Emsalon_target" }, [
+              _c("h3", { staticClass: "title_Emsalon_target" }, [
+                _vm._v("Khách hàng luôn là mục tiêu hàng đầu của Em Hair Salon")
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-xl-12" }, [
+              _c("h4", { staticClass: "name_items" }, [
+                _vm._v("Mat na tri mun")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-xl-12" }, [
+              _c("h4", { staticClass: "name_items" }, [
+                _vm._v("Mat na tri mun")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 section_products" }, [
+              _c("img", {
+                attrs: {
+                  src: "images/images_EM_shop/acne_mask_1.jpg",
+                  alt: "acne mask",
+                  width: "100%"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text_section_products" }, [
+                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
+              _vm._v(" "),
+              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/fixedheader.vue?vue&type=template&id=0d223d86&":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/fixedheader.vue?vue&type=template&id=0d223d86& ***!
@@ -39001,209 +40630,670 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("fixed-header", { attrs: { threshold: 150, hideScrollUp: true } }, [
-    _c("div", { staticClass: "big_container" }, [
-      _c("div", { staticClass: "super_container" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "previous-header" }, [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 col"
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "alarm_responsive",
-                      attrs: {
-                        src: "/images/alarm.svg",
-                        alt: "alarm_responsive_image"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "title-pre-header work-time" }, [
-                      _c("span", [_vm._v(_vm._s(_vm.contact.worktime))])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "col-xl-2 col-lg-2 col-md-3 col-sm-6 col-sm-6 col-6 col "
-                  },
-                  [
+  return _c(
+    "div",
+    [
+      _c("fixed-header", { attrs: { threshold: 150, hideScrollUp: true } }, [
+        _c("div", { staticClass: "big_container" }, [
+          _c("div", { staticClass: "super_container" }, [
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("div", { staticClass: "container" }, [
+                _c("div", { staticClass: "previous-header" }, [
+                  _c("div", { staticClass: "row" }, [
                     _c(
-                      "h3",
+                      "div",
                       {
-                        staticClass: "title-pre-header phone-number-responsive"
+                        staticClass:
+                          "col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 col"
                       },
                       [
-                        _c("span", {
-                          staticClass: "fas fa-phone-alt phone-icon"
+                        _c("img", {
+                          staticClass: "alarm_responsive",
+                          attrs: {
+                            src: "/images/alarm.svg",
+                            alt: "alarm_responsive_image"
+                          }
                         }),
-                        _vm._v(" " + _vm._s(_vm.contact.phone))
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-xl-8 col-lg-8 col-md-6  col nav-cart " },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "review-booked-calendars",
-                        attrs: { href: "#" }
-                      },
-                      [
-                        _c("i", {
-                          staticClass: "far fa-calendar-check",
-                          staticStyle: { "margin-right": "5px" }
-                        }),
-                        _vm._v("Booked\n                              ")
+                        _vm._v(" "),
+                        _c(
+                          "h3",
+                          { staticClass: "title-pre-header work-time" },
+                          [_c("span", [_vm._v(_vm._s(_vm.contact.worktime))])]
+                        )
                       ]
                     ),
                     _vm._v(" "),
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Your order")]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("Book now")]),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "col-xl-2 col-lg-2 col-md-3 col-sm-6 col-sm-6 col-6 col"
+                      },
+                      [
+                        _c(
+                          "h3",
+                          {
+                            staticClass:
+                              "title-pre-header phone-number-responsive"
+                          },
+                          [
+                            _c("span", {
+                              staticClass: "fas fa-phone-alt phone-icon"
+                            }),
+                            _vm._v(
+                              "\n                    (+84) " +
+                                _vm._s(_vm.contact.phone) +
+                                "\n                  "
+                            )
+                          ]
+                        )
+                      ]
+                    ),
                     _vm._v(" "),
                     _c(
-                      "a",
-                      { staticClass: "link_cart", attrs: { href: "#" } },
+                      "div",
+                      {
+                        staticClass: "col-xl-8 col-lg-8 col-md-6 col nav-cart"
+                      },
                       [
-                        _c("span", {
-                          staticClass: "fas fa-shopping-cart cart_logo"
-                        }),
-                        _vm._v("Cart\n                              ")
+                        _c(
+                          "a",
+                          {
+                            staticClass: "review-booked-calendars",
+                            attrs: { href: "#" }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "far fa-calendar-check",
+                              staticStyle: { "margin-right": "5px" }
+                            }),
+                            _vm._v("Booked\n                  ")
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v("Your order")
+                        ]),
+                        _vm._v(" "),
+                        _c("a", { attrs: { href: "#" } }, [_vm._v("Book now")]),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          { staticClass: "link_cart", attrs: { href: "#" } },
+                          [
+                            _c("span", {
+                              staticClass: "fas fa-shopping-cart cart_logo"
+                            }),
+                            _vm._v("Cart\n                  ")
+                          ]
+                        )
                       ]
                     )
-                  ]
-                )
+                  ])
+                ])
               ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "container" }, [
+            _c("header", [
+              _c(
+                "nav",
+                {
+                  staticClass: "navbar navbar-expand-sm",
+                  staticStyle: { display: "flex" }
+                },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "navbar-brand",
+                      attrs: { href: _vm.link.home }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "Em_logo_responsive",
+                        attrs: {
+                          src: "/images/EM_hair_salon_logo.png",
+                          alt: "Em Hair Salon logo"
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "navbar-toggler nav_bar_responsive",
+                      attrs: {
+                        type: "button",
+                        "data-toggle": "collapse",
+                        "data-target": "#collapse"
+                      }
+                    },
+                    [_c("span", { staticClass: "fas fa-bars" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse navbar-collapse main-nav-header",
+                      attrs: { id: "collapse" }
+                    },
+                    [
+                      _c(
+                        "ul",
+                        { staticClass: "navbar-nav", attrs: { id: "nav" } },
+                        [
+                          _c(
+                            "li",
+                            { staticClass: "nav-item item_responsive" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link nav_link_menu_header",
+                                  class: {
+                                    nav_active:
+                                      _vm.currentLocation.indexOf(
+                                        _vm.link.home
+                                      ) > -1
+                                  },
+                                  attrs: { href: _vm.link.home }
+                                },
+                                [_vm._v("Home")]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item item_responsive" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link nav_link_menu_header",
+                                  class: {
+                                    nav_active:
+                                      _vm.currentLocation.indexOf(
+                                        _vm.link.service
+                                      ) > -1
+                                  },
+                                  attrs: { href: _vm.link.service }
+                                },
+                                [_vm._v("Services")]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item item_responsive" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link nav_link_menu_header",
+                                  class: {
+                                    nav_active:
+                                      _vm.currentLocation.indexOf(
+                                        _vm.link.about
+                                      ) > -1
+                                  },
+                                  attrs: { href: _vm.link.about }
+                                },
+                                [_vm._v("About")]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item item_responsive" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link nav_link_menu_header",
+                                  class: {
+                                    nav_active:
+                                      _vm.currentLocation.indexOf(
+                                        _vm.link.news
+                                      ) > -1
+                                  },
+                                  attrs: { href: _vm.link.news }
+                                },
+                                [_vm._v("News")]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item item_responsive" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link nav_link_menu_header",
+                                  class: {
+                                    nav_active:
+                                      _vm.currentLocation.indexOf(
+                                        _vm.link.contact
+                                      ) > -1
+                                  },
+                                  attrs: { href: _vm.link.contact }
+                                },
+                                [_vm._v("Contact")]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item item_responsive" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link nav_link_menu_header",
+                                  class: {
+                                    nav_active:
+                                      _vm.currentLocation.indexOf(
+                                        _vm.link.emshop
+                                      ) > -1
+                                  },
+                                  attrs: { href: _vm.link.emshop }
+                                },
+                                [_vm._v("Em Shop")]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              )
             ])
           ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("header", [
-          _c(
-            "nav",
-            {
-              staticClass: "navbar navbar-expand-sm ",
-              staticStyle: { display: "flex" }
-            },
-            [
-              _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+      _c("div", { staticClass: "hotline-phone-ring-wrap" }, [
+        _c("div", { staticClass: "hotline-phone-ring" }, [
+          _c("div", { staticClass: "hotline-phone-ring-circle" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "hotline-phone-ring-circle-fill" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "hotline-phone-ring-img-circle" }, [
+            _c(
+              "a",
+              {
+                staticClass: "pps-btn-img",
+                attrs: { href: "tel:" + _vm.contact.phone }
+              },
+              [
                 _c("img", {
-                  staticClass: "Em_logo_responsive",
-                  attrs: { src: _vm.contact.logo, alt: "Em Hair Salon logo" }
+                  attrs: {
+                    src:
+                      "https://nguyenhung.net/wp-content/uploads/2019/05/icon-call-nh.png",
+                    alt: "Gọi điện thoại",
+                    width: "50"
+                  }
                 })
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "hotline-bar" }, [
+          _c("a", { attrs: { href: "tel:+84" + _vm.contact.phone } }, [
+            _c("span", { staticClass: "text-hotline" }, [
+              _vm._v("(+84) " + _vm._s(_vm.contact.phone))
+            ])
+          ])
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/footer.vue?vue&type=template&id=585a4226&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/footer.vue?vue&type=template&id=585a4226&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("footer", [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "footer-and-contact" }, [
+        _c("div", { staticClass: "row contact-in-footer" }, [
+          _c(
+            "div",
+            { staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12" },
+            [
+              _c("h4", [_vm._v("introduce")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "introduce-item" }, [
+                _c(
+                  "ul",
+                  _vm._l(_vm.contact, function(contact) {
+                    return _c(
+                      "li",
+                      {
+                        key: contact.id,
+                        staticStyle: { "font-weight": "300" }
+                      },
+                      [
+                        _c("i", { staticClass: "fas fa-phone-alt" }),
+                        _vm._v(" Call "),
+                        _c(
+                          "a",
+                          { attrs: { href: "tel:+84" + contact.phone } },
+                          [_vm._v("(+84) " + _vm._s(contact.phone))]
+                        )
+                      ]
+                    )
+                  }),
+                  0
+                )
               ]),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "navbar-toggler nav_bar_responsive",
-                  attrs: {
-                    type: "button",
-                    "data-toggle": "collapse",
-                    "data-target": "#collapse"
-                  }
-                },
-                [_c("span", { staticClass: "fas fa-bars" })]
-              ),
+              _vm._m(0),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "collapse navbar-collapse main-nav-header",
-                  attrs: { id: "collapse" }
-                },
-                [
-                  _c("ul", { staticClass: "navbar-nav" }, [
-                    _c("li", { staticClass: "nav-item item_responsive" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link nav_link_menu_header",
-                          attrs: { href: "#" }
-                        },
-                        [_vm._v("Home ")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item item_responsive" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link nav_link_menu_header",
-                          attrs: { href: "#" }
-                        },
-                        [_vm._v("Services")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item item_responsive" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link nav_link_menu_header",
-                          attrs: { href: "#" }
-                        },
-                        [_vm._v("About")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item item_responsive" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link nav_link_menu_header",
-                          attrs: { href: "#" }
-                        },
-                        [_vm._v("News")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item item_responsive" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link nav_link_menu_header",
-                          attrs: { href: "#" }
-                        },
-                        [_vm._v("Gallery")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item item_responsive" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link nav_link_menu_header",
-                          attrs: { href: "#" }
-                        },
-                        [_vm._v("EM shop")]
-                      )
-                    ])
-                  ])
-                ]
-              )
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3)
             ]
+          ),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12" },
+            [
+              _c("h4", [_vm._v("address")]),
+              _vm._v(" "),
+              _vm._l(_vm.contact, function(contact) {
+                return _c("div", { key: contact.id }, [
+                  _c("span", { staticClass: "fas fa-map-marker-alt" }),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(contact.address))])
+                ])
+              }),
+              _vm._v(" "),
+              _vm._m(5)
+            ],
+            2
           )
-        ])
+        ]),
+        _vm._v(" "),
+        _vm._m(6)
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "introduce-item" }, [
+      _c("i", { staticClass: "fab fa-facebook-messenger" }),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "https://www.messenger.com/t/Emhairsalon1",
+            target: "_blank"
+          }
+        },
+        [_vm._v(" m.me/Emhairsalon1")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "introduce-item" }, [
+      _c("i", { staticClass: "fas fa-envelope" }),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          attrs: { href: "mailto:emhairsalon@reach.org.vn", target: "_blank" }
+        },
+        [_vm._v(" emhairsalon@reach.org.vn")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "introduce-item" }, [
+      _c("i", { staticClass: "fas fa-globe" }),
+      _vm._v(" "),
+      _c(
+        "a",
+        { attrs: { href: "http://www.reach.org.vn", target: "_blank" } },
+        [_vm._v(" http://www.reach.org.vn")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "introduce-item" }, [
+      _c("h4", [_vm._v("Contact us")]),
+      _vm._v(" "),
+      _c("i", [
+        _vm._v(
+          '" Đăng nhập email hoặc facebook để nhận các thông tin mới nhất của Em Hair Salon ! "'
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "form-group input_email_footer",
+          staticStyle: { "margin-top": "20px" }
+        },
+        [
+          _c("label", { attrs: { for: "email" } }),
+          _vm._v(" "),
+          _c("input", {
+            attrs: {
+              type: "email",
+              name: "",
+              id: "email",
+              placeholder: "Nhập email"
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: " btn-success",
+              staticStyle: { padding: "1px 5px" },
+              attrs: { type: "submit" }
+            },
+            [_vm._v("Xong")]
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12 services-footer"
+      },
+      [
+        _c("h4", [_vm._v("service")]),
+        _vm._v(" "),
+        _c("ul", [
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "http://",
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                }
+              },
+              [_vm._v("Women Hair cut/ Hair Curl/ Color")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "http://",
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                }
+              },
+              [_vm._v("Man Hair cut/ Hair Curl/ Color")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "http://",
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                }
+              },
+              [_vm._v("Kid hair cut/shampoo")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "http://",
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                }
+              },
+              [_vm._v("Hair Bleaching")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "http://",
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                }
+              },
+              [_vm._v("Hair Straightening")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "http://",
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                }
+              },
+              [_vm._v("Style Hair")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "http://",
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                }
+              },
+              [_vm._v("Skin Peeling")]
+            )
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h4", [_vm._v("fanpage")]),
+      _vm._v(" "),
+      _c("iframe", {
+        staticStyle: { border: "none", overflow: "hidden" },
+        attrs: {
+          src:
+            "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FEmhairsalon1%2F&tabs=EM%20HAIR%20SALON%201%20-%20Trang%20ch%E1%BB%A7&width=400&height=160&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId",
+          width: "100%",
+          height: "160",
+          scrolling: "no",
+          frameborder: "0",
+          allowTransparency: "true",
+          allow: "encrypted-media"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-xl-12 copyright_footer" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -39231,86 +41321,82 @@ var render = function() {
         "div",
         { staticClass: "main_carousel", staticStyle: { position: "relative" } },
         [
-          _c(
-            "carousel",
-            { attrs: { autoplay: true, nav: false, items: 1, loop: true } },
-            [
-              _c(
-                "div",
-                { staticClass: "item", staticStyle: { position: "relative" } },
-                [
-                  _c("img", {
-                    staticClass: "img",
-                    attrs: { src: _vm.slide[0].img, alt: "images carousle" }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "overlay" }),
-                  _vm._v(" "),
-                  _c(
-                    "h2",
-                    {
-                      staticClass: "title-overlay wow bounceInRight",
-                      attrs: {
-                        "data-wow-duration": "2s",
-                        "data-wow-delay": "0.3s"
-                      }
-                    },
-                    [_vm._v(" " + _vm._s(_vm.slide[0].content) + " ")]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "item", staticStyle: { position: "relative" } },
-                [
-                  _c("img", {
-                    staticClass: "img",
-                    attrs: { src: _vm.slide[1].img, alt: "images carousle" }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "overlay" }),
-                  _vm._v(" "),
-                  _c(
-                    "h2",
-                    {
-                      staticClass: "title-overlay wow bounceInRight",
-                      attrs: {
-                        "data-wow-duration": "2s",
-                        "data-wow-delay": "0.3s"
-                      }
-                    },
-                    [_vm._v(" " + _vm._s(_vm.slide[1].content) + " ")]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "item", staticStyle: { position: "relative" } },
-                [
-                  _c("img", {
-                    staticClass: "img",
-                    attrs: { src: _vm.slide[2].img, alt: "images carousle" }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "overlay" }),
-                  _vm._v(" "),
-                  _c(
-                    "h2",
-                    {
-                      staticClass: "title-overlay wow bounceInRight",
-                      attrs: {
-                        "data-wow-duration": "2s",
-                        "data-wow-delay": "0.3s"
-                      }
-                    },
-                    [_vm._v(" " + _vm._s(_vm.slide[2].content) + " ")]
-                  )
-                ]
-              )
-            ]
-          ),
+          _c("carousel", { attrs: { autoplay: true, nav: false, items: 1 } }, [
+            _c(
+              "div",
+              { staticClass: "item", staticStyle: { position: "relative" } },
+              [
+                _c("img", {
+                  staticClass: "img",
+                  attrs: { src: _vm.img1, alt: "images carousle" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "overlay" }),
+                _vm._v(" "),
+                _c(
+                  "h2",
+                  {
+                    staticClass: "title-overlay wow bounceInRight",
+                    attrs: {
+                      "data-wow-duration": "2s",
+                      "data-wow-delay": "0.3s"
+                    }
+                  },
+                  [_vm._v(" " + _vm._s(_vm.content1) + " ")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "item", staticStyle: { position: "relative" } },
+              [
+                _c("img", {
+                  staticClass: "img",
+                  attrs: { src: _vm.img2, alt: "images carousle" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "overlay" }),
+                _vm._v(" "),
+                _c(
+                  "h2",
+                  {
+                    staticClass: "title-overlay wow bounceInRight",
+                    attrs: {
+                      "data-wow-duration": "2s",
+                      "data-wow-delay": "0.3s"
+                    }
+                  },
+                  [_vm._v(" " + _vm._s(_vm.content2) + " ")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "item", staticStyle: { position: "relative" } },
+              [
+                _c("img", {
+                  staticClass: "img",
+                  attrs: { src: _vm.img3, alt: "images carousle" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "overlay" }),
+                _vm._v(" "),
+                _c(
+                  "h2",
+                  {
+                    staticClass: "title-overlay wow bounceInRight",
+                    attrs: {
+                      "data-wow-duration": "2s",
+                      "data-wow-delay": "0.3s"
+                    }
+                  },
+                  [_vm._v(" " + _vm._s(_vm.content3) + " ")]
+                )
+              ]
+            )
+          ]),
           _vm._v(" "),
           _c(
             "button",
@@ -39331,15 +41417,130 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _vm._m(1),
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "combo-suggestions" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row" },
+          _vm._l(_vm.combo, function(item) {
+            return _c(
+              "div",
+              {
+                key: item.id,
+                staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12"
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "combo-sale wow slideInLeft",
+                    attrs: {
+                      "data-wow-duration": "1s",
+                      "data-wow-delay": "0.1s"
+                    }
+                  },
+                  [
+                    _c("h4", { staticClass: "title-combo" }, [
+                      _c("i", [_vm._v(_vm._s(item.name_combo))])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "i",
+                      { staticClass: "text-after-title-combo-suggestions" },
+                      [_vm._v("Sale " + _vm._s(item.sale) + "%")]
+                    ),
+                    _vm._v(" "),
+                    _c("ul", { staticClass: "combo-nav" }, [
+                      _c("li", { staticClass: "combo-item" }, [
+                        _vm._v(_vm._s(item.service_1))
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "combo-item" }, [
+                        _vm._v(_vm._s(item.service_2))
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "combo-item" }, [
+                        _vm._v(_vm._s(item.service_3))
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "combo-item" }, [
+                        _vm._v(_vm._s(item.service_4))
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "combo-item" }, [
+                        _vm._v(_vm._s(item.service_5))
+                      ]),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "combo-item" }, [
+                        _vm._v(_vm._s(item.service_6))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "price-sale-off" }, [
+                      _c("del", [
+                        _c("i", { staticClass: "before-sale-off" }, [
+                          _vm._v(_vm._s(item.price) + "$")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "sale-off" }, [
+                        _c("span", [_vm._v("-> only")]),
+                        _vm._v(
+                          " " +
+                            _vm._s(
+                              item.price - (item.price * item.sale) / 100
+                            ) +
+                            "$\r\n                "
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ]
+            )
+          }),
+          0
+        )
+      ])
+    ]),
     _vm._v(" "),
-    _vm._m(2),
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        {
+          staticClass: "our-ability wow slideInLeft",
+          attrs: { "data-wow-duration": "1s", "data-wow-delay": "1s" }
+        },
+        [
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-xl-12" }, [
+              _c("div", { staticClass: "see-all-services" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "link-see-all-services",
+                    attrs: { href: _vm.link.service }
+                  },
+                  [_vm._v("See all services")]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ]),
     _vm._v(" "),
-    _vm._m(3),
+    _vm._m(4),
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "Update-on-new-trends" }, [
-        _vm._m(4),
+        _vm._m(5),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
           _c(
@@ -39513,12 +41714,14 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _vm._m(5)
+          _vm._m(6)
         ])
       ])
     ]),
     _vm._v(" "),
-    _vm._m(6)
+    _vm._m(7),
+    _vm._v(" "),
+    _vm._m(8)
   ])
 }
 var staticRenderFns = [
@@ -39575,244 +41778,32 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "combo-suggestions" }, [
-        _c("h3", { staticClass: "title-combo-suggestions" }, [
-          _c("i", { staticClass: "fas fa-forward icon-sale" }),
+    return _c("h3", { staticClass: "title-combo-suggestions" }, [
+      _c("i", { staticClass: "fas fa-forward icon-sale" }),
+      _vm._v(" "),
+      _c("i", [_vm._v("Discount combos")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-xl-12" }, [
+        _c("div", { staticClass: "content-our-ability" }, [
+          _c("h3", { staticClass: "title-body-our-ability" }, [
+            _vm._v("What do we do")
+          ]),
           _vm._v(" "),
-          _c("i", [_vm._v("Discount combos")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
-            { staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12" },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "combo-sale wow slideInLeft",
-                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "0.1s" }
-                },
-                [
-                  _c("h4", { staticClass: "title-combo" }, [
-                    _c("i", [_vm._v("Joico treatment")])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "i",
-                    { staticClass: "text-after-title-combo-suggestions" },
-                    [_vm._v("Sale 25%")]
-                  ),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "combo-nav" }, [
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Đắp mặt nạ")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Tẩy da chết")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Đắp mặt nạ")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Đắp mặt nạ")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "price-sale-off" }, [
-                    _c("del", [
-                      _c("i", { staticClass: "before-sale-off" }, [
-                        _vm._v("100$")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("h5", { staticClass: "sale-off" }, [
-                      _c("span", [_vm._v("-> only")]),
-                      _vm._v(" 75$\r\n                ")
-                    ])
-                  ])
-                ]
-              )
-            ]
-          ),
+          _c("p", { staticClass: "text-after-title-body-our-ability" }, [
+            _vm._v("The quality and service attitude that make up our brand !")
+          ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12" },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "combo-sale wow slideInLeft",
-                  attrs: {
-                    "data-wow-duration": "1.1s",
-                    "data-wow-delay": "0.3s"
-                  }
-                },
-                [
-                  _c("h4", { staticClass: "title-combo" }, [
-                    _c("i", [_vm._v("Olaplex treatment")])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "i",
-                    { staticClass: "text-after-title-combo-suggestions" },
-                    [_vm._v("Sale 25%")]
-                  ),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "combo-nav" }, [
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Treatment")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("hair wash")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Head & Face massage")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Blow dry")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "price-sale-off" }, [
-                    _c("del", [
-                      _c("i", { staticClass: "before-sale-off" }, [
-                        _vm._v("100$")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("h5", { staticClass: "sale-off" }, [
-                      _c("span", [_vm._v("-> only")]),
-                      _vm._v(" 75$\r\n                ")
-                    ])
-                  ])
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12" },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "combo-sale wow slideInRight",
-                  attrs: {
-                    "data-wow-duration": "1.1s",
-                    "data-wow-delay": "0.3s"
-                  }
-                },
-                [
-                  _c("h4", { staticClass: "title-combo" }, [
-                    _c("i", [_vm._v("Shampoo for kid")])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "i",
-                    { staticClass: "text-after-title-combo-suggestions" },
-                    [_vm._v("Sale 25%")]
-                  ),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "combo-nav" }, [
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Shampoo")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("head massage")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("face cleaning")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("style blow dry")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "price-sale-off" }, [
-                    _c("del", [
-                      _c("i", { staticClass: "before-sale-off" }, [
-                        _vm._v("100$")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("h5", { staticClass: "sale-off" }, [
-                      _c("span", [_vm._v("-> only")]),
-                      _vm._v(" 75$\r\n                ")
-                    ])
-                  ])
-                ]
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12" },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "combo-sale wow slideInRight",
-                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "0.1s" }
-                },
-                [
-                  _c("h4", { staticClass: "title-combo" }, [
-                    _c("i", [_vm._v("King combo")])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "i",
-                    { staticClass: "text-after-title-combo-suggestions" },
-                    [_vm._v("Sale 25%")]
-                  ),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "combo-nav" }, [
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Đắp mặt nạ")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Tẩy da chết")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Đắp mặt nạ")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "combo-item" }, [
-                      _vm._v("Đắp mặt nạ")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "price-sale-off" }, [
-                    _c("del", [
-                      _c("i", { staticClass: "before-sale-off" }, [
-                        _vm._v("100$")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("h5", { staticClass: "sale-off" }, [
-                      _c("span", [_vm._v("-> only")]),
-                      _vm._v(" 75$\r\n                ")
-                    ])
-                  ])
-                ]
-              )
-            ]
-          )
+          _c("p", { staticClass: "scissors" }, [
+            _vm._v("\r\n                ------\r\n                "),
+            _c("span", { staticClass: "fas fa-cut scissors-icon" }),
+            _vm._v(" ------\r\n              ")
+          ])
         ])
       ])
     ])
@@ -39821,141 +41812,87 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
+    return _c("div", { staticClass: "row" }, [
       _c(
         "div",
-        {
-          staticClass: "our-ability wow slideInLeft",
-          attrs: { "data-wow-duration": "1s", "data-wow-delay": "1s" }
-        },
+        { staticClass: "col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12" },
         [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xl-12" }, [
-              _c("div", { staticClass: "content-our-ability" }, [
-                _c("h3", { staticClass: "title-body-our-ability" }, [
-                  _vm._v("What do we do")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-after-title-body-our-ability" }, [
-                  _vm._v(
-                    "The quality and service attitude that make up our brand !"
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "scissors" }, [
-                  _vm._v("\r\n                ------\r\n                "),
-                  _c("span", { staticClass: "fas fa-cut scissors-icon" }),
-                  _vm._v(" ------\r\n              ")
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12" },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass: "some-service wow slideInLeft",
-                    attrs: {
-                      "data-wow-duration": "1s",
-                      "data-wow-delay": "0.1s"
-                    }
-                  },
-                  [
-                    _c("img", {
-                      staticStyle: { "border-radius": "50%" },
-                      attrs: { src: "images/em-hair-cut1.jpg", width: "100%" }
-                    }),
-                    _vm._v(" "),
-                    _c("h4", { staticClass: "title-some-service" }, [
-                      _vm._v("hairstylist")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-some-service" }, [
-                      _vm._v(
-                        "Cắt tóc nam chuyên nghiệp tại Minh Nghị Hair Salon được thực hiện bởi những nhà tạo mẫu tóc tài năng, giàu kinh nghiệm sẽ giúp phái mạnh tạo nên phong cách và ấn tượng riêng cho [...]"
-                      )
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12" },
-              [
-                _c("div", { staticClass: "some-service wow bounceInUp" }, [
-                  _c("img", {
-                    staticStyle: { "border-radius": "50%" },
-                    attrs: { src: "images/wash-your-face.jpg", width: "100%" }
-                  }),
-                  _vm._v(" "),
-                  _c("h4", { staticClass: "title-some-service" }, [
-                    _vm._v("wash your face")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-some-service" }, [
-                    _vm._v(
-                      "Cắt tóc nam chuyên nghiệp tại Minh Nghị Hair Salon được thực hiện bởi những nhà tạo mẫu tóc tài năng, giàu kinh nghiệm sẽ giúp phái mạnh tạo nên phong cách và ấn tượng riêng cho [...]"
-                    )
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12" },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass: "some-service wow slideInRight",
-                    attrs: {
-                      "data-wow-duration": "1s",
-                      "data-wow-delay": "0.1s"
-                    }
-                  },
-                  [
-                    _c("img", {
-                      staticStyle: { "border-radius": "50%" },
-                      attrs: { src: "images/Em-massage.jpg", width: "100%" }
-                    }),
-                    _vm._v(" "),
-                    _c("h4", { staticClass: "title-some-service" }, [
-                      _vm._v("Massage")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-some-service" }, [
-                      _vm._v(
-                        "Cắt tóc nam chuyên nghiệp tại Minh Nghị Hair Salon được thực hiện bởi những nhà tạo mẫu tóc tài năng, giàu kinh nghiệm sẽ giúp phái mạnh tạo nên phong cách và ấn tượng riêng cho [...]"
-                      )
-                    ])
-                  ]
-                )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xl-12" }, [
-              _c("div", { staticClass: "see-all-services" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "link-see-all-services",
-                    attrs: { href: "#" }
-                  },
-                  [_vm._v("See all services")]
+          _c(
+            "div",
+            {
+              staticClass: "some-service wow slideInLeft",
+              attrs: { "data-wow-duration": "1s", "data-wow-delay": "0.1s" }
+            },
+            [
+              _c("img", {
+                staticStyle: { "border-radius": "50%" },
+                attrs: { src: "images/em-hair-cut1.jpg", width: "100%" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "title-some-service" }, [
+                _vm._v("hairstylist")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-some-service" }, [
+                _vm._v(
+                  "Cắt tóc nam chuyên nghiệp tại Minh Nghị Hair Salon được thực hiện bởi những nhà tạo mẫu tóc tài năng, giàu kinh nghiệm sẽ giúp phái mạnh tạo nên phong cách và ấn tượng riêng cho [...]"
                 )
               ])
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12" },
+        [
+          _c("div", { staticClass: "some-service wow bounceInUp" }, [
+            _c("img", {
+              staticStyle: { "border-radius": "50%" },
+              attrs: { src: "images/wash-your-face.jpg", width: "100%" }
+            }),
+            _vm._v(" "),
+            _c("h4", { staticClass: "title-some-service" }, [
+              _vm._v("wash your face")
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-some-service" }, [
+              _vm._v(
+                "Cắt tóc nam chuyên nghiệp tại Minh Nghị Hair Salon được thực hiện bởi những nhà tạo mẫu tóc tài năng, giàu kinh nghiệm sẽ giúp phái mạnh tạo nên phong cách và ấn tượng riêng cho [...]"
+              )
             ])
           ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12" },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "some-service wow slideInRight",
+              attrs: { "data-wow-duration": "1s", "data-wow-delay": "0.1s" }
+            },
+            [
+              _c("img", {
+                staticStyle: { "border-radius": "50%" },
+                attrs: { src: "images/Em-massage.jpg", width: "100%" }
+              }),
+              _vm._v(" "),
+              _c("h4", { staticClass: "title-some-service" }, [
+                _vm._v("Massage")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-some-service" }, [
+                _vm._v(
+                  "Cắt tóc nam chuyên nghiệp tại Minh Nghị Hair Salon được thực hiện bởi những nhà tạo mẫu tóc tài năng, giàu kinh nghiệm sẽ giúp phái mạnh tạo nên phong cách và ấn tượng riêng cho [...]"
+                )
+              ])
+            ]
+          )
         ]
       )
     ])
@@ -39982,7 +41919,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "col-xl-12 opening-time-summary" }, [
                 _c("h4", { staticClass: "text-after-title-open-time" }, [
                   _vm._v(
-                    "\r\n                Opening time of Em Hair Salon - Please track the opening time of Minh Nghi Hair Salon\r\n                "
+                    "\r\n                Opening time of Em Hair Salon - Please track the opening time of Em Hair Salon\r\n                "
                   ),
                   _c("br"),
                   _vm._v(
@@ -40387,6 +42324,619 @@ var staticRenderFns = [
         ])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "API_map" }, [
+        _c("div", { staticClass: "row Em-hair-map" }, [
+          _c("div", { staticClass: "col-xl-12" }, [
+            _c("iframe", {
+              staticStyle: { border: "0" },
+              attrs: {
+                src:
+                  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.591203610626!2d105.83886671532784!3d21.049036892460723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abba04f05471%3A0xaacb7d8c86e3ef47!2sEm%20Hair%20Salon%201!5e0!3m2!1sen!2s!4v1578105180112!5m2!1sen!2s",
+                width: "100%",
+                height: "450",
+                frameborder: "0",
+                allowfullscreen: ""
+              }
+            })
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/service.vue?vue&type=template&id=0122e5ba&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/service.vue?vue&type=template&id=0122e5ba&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "Em_services" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "service-details" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-xl-6 content-service-details" }, [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-xl-8" }, [
+                _c("h3", { staticClass: "title-content-service-details" }, [
+                  _vm._v("Haircut and styling")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "table",
+                  { staticClass: "table table-bordered table-success" },
+                  [
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.haircut, function(item) {
+                        return _c("tr", { key: item.id }, [
+                          _c("td", [_vm._v(_vm._s(item.service))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.price) + " $")])
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(4)
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row hair-wash-services" }, [
+          _vm._m(5),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-xl-6" }, [
+            _c("h3", { staticClass: "title-content-service-details" }, [
+              _vm._v("hairwash")
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table table-bordered table-success" }, [
+              _vm._m(6),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.hairwash, function(item) {
+                  return _c("tr", { key: item.id }, [
+                    _c("td", [_vm._v(_vm._s(item.service))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.price) + " $")])
+                  ])
+                }),
+                0
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(7),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row", staticStyle: { "margin-top": "70px" } },
+          [
+            _vm._m(8),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-6" }, [
+              _c("h3", { staticClass: "title-content-service-details" }, [
+                _vm._v("color")
+              ]),
+              _vm._v(" "),
+              _c(
+                "table",
+                { staticClass: "table table-bordered table-success" },
+                [
+                  _vm._m(9),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.hairdye, function(item) {
+                      return _c("tr", { key: item.id }, [
+                        _c("td", [_vm._v(_vm._s(item.service))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(item.price) + " $")])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "services-page" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "all-services" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-xl-12" }, [
+              _c(
+                "h1",
+                {
+                  staticClass: "title-services-page wow bounceInRight",
+                  attrs: { "data-wow-duration": "3s" }
+                },
+                [_vm._v("Our services")]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass: "text-after-services-page wow bounceInLeft",
+                  attrs: { "data-wow-duration": "3s" }
+                },
+                [
+                  _c("i", [
+                    _vm._v(
+                      "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                { staticClass: "scissors", staticStyle: { color: "#bb8c4b" } },
+                [
+                  _vm._v("\n              ------\n              "),
+                  _c("span", { staticClass: "fas fa-cut scissors-icon" }),
+                  _vm._v(" ------\n            ")
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-xl-3" }, [
+              _c("div", { staticClass: "services-table" }, [
+                _c("img", {
+                  attrs: {
+                    src: "images/images_services/scissors-services.svg",
+                    alt: "scissors-services.svg"
+                  }
+                }),
+                _vm._v(" "),
+                _c("h3", { staticClass: "title-services-item" }, [
+                  _vm._v("Hair cut")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-services-item" }, [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, assumenda rem nulla odio iure animi repellat voluptates ullam omnis enim?"
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-3" }, [
+              _c("div", { staticClass: "services-table" }, [
+                _c("img", {
+                  attrs: {
+                    src: "images/images_services/shampoo-services.svg",
+                    alt: "scissors-services.svg"
+                  }
+                }),
+                _vm._v(" "),
+                _c("h3", { staticClass: "title-services-item" }, [
+                  _vm._v("Shampoo")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-services-item" }, [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, assumenda rem nulla odio iure animi repellat voluptates ullam omnis enim?"
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-3" }, [
+              _c("div", { staticClass: "services-table" }, [
+                _c("img", {
+                  attrs: {
+                    src: "images/images_services/massage-services.svg",
+                    alt: "scissors-services.svg"
+                  }
+                }),
+                _vm._v(" "),
+                _c("h3", { staticClass: "title-services-item" }, [
+                  _vm._v("Massage")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-services-item" }, [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, assumenda rem nulla odio iure animi repellat voluptates ullam omnis enim?"
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-3" }, [
+              _c("div", { staticClass: "services-table" }, [
+                _c("img", {
+                  attrs: {
+                    src: "images/images_services/scissors-services.svg",
+                    alt: "scissors-services.svg"
+                  }
+                }),
+                _vm._v(" "),
+                _c("h3", { staticClass: "title-services-item" }, [
+                  _vm._v("Color")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-services-item" }, [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, assumenda rem nulla odio iure animi repellat voluptates ullam omnis enim?"
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-xl-12 col-lg-12 col-md-12 col-sm-6 col-6" },
+      [
+        _c(
+          "h2",
+          {
+            staticClass: "text-EM wow rollIn",
+            attrs: { "data-wow-duration": "1.5s" }
+          },
+          [_vm._v("EM Hair Salon")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xl-4" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-xl-12 col-sm-6 col-6" }, [
+          _c("img", {
+            attrs: {
+              src: "images/em-hair-cut2.jpg",
+              alt: "em-hair-cut2.jpg",
+              width: "95%"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "col-xl-12 col-sm-6 col-6",
+            staticStyle: { "margin-top": "10px" }
+          },
+          [
+            _c("img", {
+              attrs: {
+                src: "images/em-hair-cut2.jpg",
+                alt: "em-hair-cut2.jpg",
+                width: "95%"
+              }
+            })
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "thead",
+      { staticStyle: { background: "#171616", color: "#fff" } },
+      [
+        _c("tr", [
+          _c("th", [_vm._v("Service")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Price")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xl-6 video-service" }, [
+      _c("iframe", {
+        attrs: {
+          width: "100%",
+          height: "315",
+          src: "https://www.youtube.com/embed/yX0YWLWXeDo",
+          frameborder: "0",
+          allow:
+            "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+          allowfullscreen: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("p", [_vm._v('"Trai nghiem tai EM Hair salon"')])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xl-6 image-wash-services" }, [
+      _c("p", [_vm._v("Trai nghiem goi dau tai Em Hair salon")]),
+      _vm._v(" "),
+      _c("img", {
+        attrs: {
+          src: "images/images_services/khi_02.jpg",
+          alt: "hair-wash-services.png",
+          width: "100%"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "thead",
+      { staticStyle: { background: "#171616", color: "#fff" } },
+      [
+        _c("tr", [
+          _c("th", [_vm._v("Service")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Price")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row massage-services" }, [
+      _c("div", { staticClass: "col-xl-6" }, [
+        _c("h3", { staticClass: "title-content-service-details" }, [
+          _vm._v("massage")
+        ]),
+        _vm._v(" "),
+        _c("table", { staticClass: "table table-bordered table-success" }, [
+          _c(
+            "thead",
+            { staticStyle: { background: "#171616", color: "#fff" } },
+            [
+              _c("tr", [
+                _c("th", [_vm._v("Service")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Price")])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("tbody", [
+            _c("tr", [
+              _c("td", [_vm._v("Men's haircut")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("$100+")])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Men's haircut")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("$100+")])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Men's haircut")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("$100+")])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Men's haircut")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("$100+")])
+            ]),
+            _vm._v(" "),
+            _c("tr", [
+              _c("td", [_vm._v("Men's haircut")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("$100+")])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-6" }, [
+        _c("div", { staticClass: "images-massage" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown",
+                attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.1s" }
+              },
+              [
+                _c("img", {
+                  attrs: {
+                    src: "images/images_services/massage-services1.jpg",
+                    alt: "massage-services1.jpg",
+                    width: "100%"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown",
+                attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.4s" }
+              },
+              [
+                _c("img", {
+                  staticStyle: { "margin-top": "50px" },
+                  attrs: {
+                    src: "images/images_services/massage-services2.jpg",
+                    alt: "massage-services2.jpg",
+                    width: "100%"
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown",
+                attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.7s" }
+              },
+              [
+                _c("img", {
+                  staticStyle: { "margin-top": "100px" },
+                  attrs: {
+                    src: "images/images_services/massage-services3.jpg",
+                    alt: "massage-services3.jpg",
+                    width: "100%"
+                  }
+                })
+              ]
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-xl-6" }, [
+      _c("div", { staticClass: "images-massage" }, [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInUp",
+              attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.1s" }
+            },
+            [
+              _c("img", {
+                attrs: {
+                  src: "images/images_services/massage-services1.jpg",
+                  alt: "massage-services1.jpg",
+                  width: "100%"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInUp",
+              attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.4s" }
+            },
+            [
+              _c("img", {
+                staticStyle: { "margin-top": "50px" },
+                attrs: {
+                  src: "images/images_services/massage-services2.jpg",
+                  alt: "massage-services2.jpg",
+                  width: "100%"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInUp",
+              attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.7s" }
+            },
+            [
+              _c("img", {
+                staticStyle: { "margin-top": "100px" },
+                attrs: {
+                  src: "images/images_services/massage-services3.jpg",
+                  alt: "massage-services3.jpg",
+                  width: "100%"
+                }
+              })
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "thead",
+      { staticStyle: { background: "#171616", color: "#fff" } },
+      [
+        _c("tr", [
+          _c("th", [_vm._v("Color")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Price")])
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -52617,6 +55167,10 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('menu-fix', __webpack_require__(/*! ./components/fixedheader.vue */ "./resources/js/components/fixedheader.vue")["default"]);
 Vue.component('em-home', __webpack_require__(/*! ./components/home.vue */ "./resources/js/components/home.vue")["default"]);
+Vue.component('em-about', __webpack_require__(/*! ./components/about.vue */ "./resources/js/components/about.vue")["default"]);
+Vue.component('footer-footer', __webpack_require__(/*! ./components/footer.vue */ "./resources/js/components/footer.vue")["default"]);
+Vue.component('em-service', __webpack_require__(/*! ./components/service.vue */ "./resources/js/components/service.vue")["default"]);
+Vue.component('em-shop', __webpack_require__(/*! ./components/emshop.vue */ "./resources/js/components/emshop.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -52743,6 +55297,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/about.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/components/about.vue ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _about_vue_vue_type_template_id_0b0aedd2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./about.vue?vue&type=template&id=0b0aedd2&scoped=true& */ "./resources/js/components/about.vue?vue&type=template&id=0b0aedd2&scoped=true&");
+/* harmony import */ var _about_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./about.vue?vue&type=script&lang=js& */ "./resources/js/components/about.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _about_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _about_vue_vue_type_template_id_0b0aedd2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _about_vue_vue_type_template_id_0b0aedd2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "0b0aedd2",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/about.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/about.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/about.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./about.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/about.vue?vue&type=template&id=0b0aedd2&scoped=true&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/about.vue?vue&type=template&id=0b0aedd2&scoped=true& ***!
+  \**************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_template_id_0b0aedd2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./about.vue?vue&type=template&id=0b0aedd2&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/about.vue?vue&type=template&id=0b0aedd2&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_template_id_0b0aedd2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_template_id_0b0aedd2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/emshop.vue":
+/*!********************************************!*\
+  !*** ./resources/js/components/emshop.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _emshop_vue_vue_type_template_id_713626a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./emshop.vue?vue&type=template&id=713626a9&scoped=true& */ "./resources/js/components/emshop.vue?vue&type=template&id=713626a9&scoped=true&");
+/* harmony import */ var _emshop_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./emshop.vue?vue&type=script&lang=js& */ "./resources/js/components/emshop.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _emshop_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _emshop_vue_vue_type_template_id_713626a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _emshop_vue_vue_type_template_id_713626a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "713626a9",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/emshop.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/emshop.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/emshop.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_emshop_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./emshop.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/emshop.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_emshop_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/emshop.vue?vue&type=template&id=713626a9&scoped=true&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/emshop.vue?vue&type=template&id=713626a9&scoped=true& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_emshop_vue_vue_type_template_id_713626a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./emshop.vue?vue&type=template&id=713626a9&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/emshop.vue?vue&type=template&id=713626a9&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_emshop_vue_vue_type_template_id_713626a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_emshop_vue_vue_type_template_id_713626a9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/fixedheader.vue":
 /*!*************************************************!*\
   !*** ./resources/js/components/fixedheader.vue ***!
@@ -52830,6 +55522,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/footer.vue":
+/*!********************************************!*\
+  !*** ./resources/js/components/footer.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _footer_vue_vue_type_template_id_585a4226_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./footer.vue?vue&type=template&id=585a4226&scoped=true& */ "./resources/js/components/footer.vue?vue&type=template&id=585a4226&scoped=true&");
+/* harmony import */ var _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer.vue?vue&type=script&lang=js& */ "./resources/js/components/footer.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _footer_vue_vue_type_template_id_585a4226_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _footer_vue_vue_type_template_id_585a4226_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "585a4226",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/footer.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/footer.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/footer.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./footer.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/footer.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/footer.vue?vue&type=template&id=585a4226&scoped=true&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/footer.vue?vue&type=template&id=585a4226&scoped=true& ***!
+  \***************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_template_id_585a4226_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./footer.vue?vue&type=template&id=585a4226&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/footer.vue?vue&type=template&id=585a4226&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_template_id_585a4226_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_template_id_585a4226_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/home.vue":
 /*!******************************************!*\
   !*** ./resources/js/components/home.vue ***!
@@ -52894,6 +55655,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_home_vue_vue_type_template_id_fa6affac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_home_vue_vue_type_template_id_fa6affac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/service.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/service.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _service_vue_vue_type_template_id_0122e5ba_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./service.vue?vue&type=template&id=0122e5ba&scoped=true& */ "./resources/js/components/service.vue?vue&type=template&id=0122e5ba&scoped=true&");
+/* harmony import */ var _service_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./service.vue?vue&type=script&lang=js& */ "./resources/js/components/service.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _service_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _service_vue_vue_type_template_id_0122e5ba_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _service_vue_vue_type_template_id_0122e5ba_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "0122e5ba",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/service.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/service.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/service.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_service_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./service.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/service.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_service_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/service.vue?vue&type=template&id=0122e5ba&scoped=true&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/service.vue?vue&type=template&id=0122e5ba&scoped=true& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_service_vue_vue_type_template_id_0122e5ba_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./service.vue?vue&type=template&id=0122e5ba&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/service.vue?vue&type=template&id=0122e5ba&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_service_vue_vue_type_template_id_0122e5ba_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_service_vue_vue_type_template_id_0122e5ba_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

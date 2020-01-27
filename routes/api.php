@@ -21,6 +21,9 @@ Route::prefix('index')->group(function () {
     Route::get('/','API\IndexController@index');
     Route::get('/home','API\IndexController@show');
 });
+Route::prefix('service')->group(function(){
+    Route::get('/','API\ServiceController@showService');
+});
 Route::prefix('book')->group(function () {
     //book
     Route::post('/', 'API\BookController@store'); 

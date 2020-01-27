@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\API;
+
 use App\Slide;
 use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
+use App\Combo;
+
 class IndexController extends BaseController
 {
     /**
@@ -14,11 +17,19 @@ class IndexController extends BaseController
      */
     public function index()
     {
-        $contact=Contact::all();
+        $contact = Contact::all();
+        $link=[
+            'home'=>route('index'),
+            'about'=>route('about'),
+            'service'=>route('service'),
+            'contact'=>route('contact'),
+            'news'=>route('news'),
+            'emshop'=>route('emshop')
+        ];
         return $this->sendResponse([
-            'contact'=>$contact
-        ],'successfully');
-        
+            'contact' => $contact,
+            'link'=>$link
+        ], 'successfully');
     }
 
     /**
@@ -50,10 +61,12 @@ class IndexController extends BaseController
      */
     public function show()
     {
-        $slide=Slide::all();
+        $slide = Slide::all();
+        $combo = Combo::all();
         return $this->sendResponse([
-            'slide'=>$slide
-        ],'successfully');
+            'slide' => $slide,
+            'combo' => $combo
+        ], 'successfully');
     }
 
     /**
