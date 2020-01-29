@@ -65,44 +65,13 @@
     <div class="service-details">
       <div class="container">
         <div class="row">
-          <div class="col-xl-6 content-service-details">
-            <div class="row">
-              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-6">
-                <h2 class="text-EM wow rollIn" data-wow-duration="1.5s">EM Hair Salon</h2>
-              </div>
-              <div class="col-xl-4">
-                <div class="row">
-                  <div class="col-xl-12 col-sm-6 col-6">
-                    <img src="images/em-hair-cut2.jpg" alt="em-hair-cut2.jpg" width="95%" />
-                  </div>
-                  <div class="col-xl-12 col-sm-6 col-6" style="margin-top: 10px;">
-                    <img src="images/em-hair-cut2.jpg" alt="em-hair-cut2.jpg" width="95%" />
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-8">
-                <h3 class="title-content-service-details">Haircut and styling</h3>
-                <table class="table table-bordered table-success">
-                  <thead style="background: #171616; color: #fff;">
-                    <tr>
-                      <th>Service</th>
-                      <th>Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="item in haircut" :key="item.id">
-                      <td>{{item.service}}</td>
-                      <td>{{item.price}} $</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-6">
+            <h2 class="text-EM wow rollIn" data-wow-duration="1.5s">EM Hair Salon</h2>
           </div>
-          <div class="col-xl-6 video-service">
+          <div class="col-xl-12 video-service">
             <iframe
-              width="100%"
-              height="315"
+              width="70%"
+              height="438"
               src="https://www.youtube.com/embed/yX0YWLWXeDo"
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -112,13 +81,9 @@
           </div>
         </div>
 
-        <div class="row hair-wash-services">
-          <div class="col-xl-6 image-wash-services">
-            <p>Trai nghiem goi dau tai Em Hair salon</p>
-            <img src="images/images_services/khi_02.jpg" alt="hair-wash-services.png" width="100%" />
-          </div>
+        <div v-for="item in services" :key="item.id" class="row massage-services">
           <div class="col-xl-6">
-            <h3 class="title-content-service-details">hairwash</h3>
+            <h3 class="title-content-service-details">{{item.name_cat}}</h3>
             <table class="table table-bordered table-success">
               <thead style="background: #171616; color: #fff;">
                 <tr>
@@ -127,148 +92,27 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="item in hairwash" :key="item.id">
-                      <td>{{item.service}}</td>
-                      <td>{{item.price}} $</td>
-                    </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="row massage-services">
-          <div class="col-xl-6">
-            <h3 class="title-content-service-details">massage</h3>
-            <table class="table table-bordered table-success">
-              <thead style="background: #171616; color: #fff;">
-                <tr>
-                  <th>Service</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Men's haircut</td>
-                  <td>$100+</td>
-                </tr>
-                <tr>
-                  <td>Men's haircut</td>
-                  <td>$100+</td>
-                </tr>
-                <tr>
-                  <td>Men's haircut</td>
-                  <td>$100+</td>
-                </tr>
-                <tr>
-                  <td>Men's haircut</td>
-                  <td>$100+</td>
-                </tr>
-                <tr>
-                  <td>Men's haircut</td>
-                  <td>$100+</td>
+                <tr v-for="service in item.service" :key="service.id">
+                  <td>{{service.service}}</td>
+                  <td>{{service.price}}</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="col-xl-6">
+          <div class="col-xl-6 align-self-center">
             <div class="images-massage">
               <div class="row">
                 <div
+                  v-for="img in item.img"
+                  :key="img.id"
                   class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown"
                   data-wow-duration="2s"
                   data-wow-delay="0.1s"
                 >
-                  <img
-                    src="images/images_services/massage-services1.jpg"
-                    alt="massage-services1.jpg"
-                    width="100%"
-                  />
-                </div>
-                <div
-                  class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown"
-                  data-wow-duration="2s"
-                  data-wow-delay="0.4s"
-                >
-                  <img
-                    src="images/images_services/massage-services2.jpg"
-                    alt="massage-services2.jpg"
-                    width="100%"
-                    style="margin-top: 50px;"
-                  />
-                </div>
-                <div
-                  class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown"
-                  data-wow-duration="2s"
-                  data-wow-delay="0.7s"
-                >
-                  <img
-                    src="images/images_services/massage-services3.jpg"
-                    alt="massage-services3.jpg"
-                    width="100%"
-                    style="margin-top: 100px;"
-                  />
+                  <img :src="img.img" alt="massage-services1.jpg" width="100%" />
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row" style="margin-top: 70px;">
-          <div class="col-xl-6">
-            <div class="images-massage">
-              <div class="row">
-                <div
-                  class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInUp"
-                  data-wow-duration="2s"
-                  data-wow-delay="0.1s"
-                >
-                  <img
-                    src="images/images_services/massage-services1.jpg"
-                    alt="massage-services1.jpg"
-                    width="100%"
-                  />
-                </div>
-                <div
-                  class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInUp"
-                  data-wow-duration="2s"
-                  data-wow-delay="0.4s"
-                >
-                  <img
-                    src="images/images_services/massage-services2.jpg"
-                    alt="massage-services2.jpg"
-                    width="100%"
-                    style="margin-top: 50px;"
-                  />
-                </div>
-                <div
-                  class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInUp"
-                  data-wow-duration="2s"
-                  data-wow-delay="0.7s"
-                >
-                  <img
-                    src="images/images_services/massage-services3.jpg"
-                    alt="massage-services3.jpg"
-                    width="100%"
-                    style="margin-top: 100px;"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6">
-            <h3 class="title-content-service-details">color</h3>
-            <table class="table table-bordered table-success">
-              <thead style="background: #171616; color: #fff;">
-                <tr>
-                  <th>Color</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="item in hairdye" :key="item.id">
-                      <td>{{item.service}}</td>
-                      <td>{{item.price}} $</td>
-                    </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
@@ -280,26 +124,21 @@
 
 <script>
 export default {
-  data(){
+  data() {
     return {
-      haircut:"",
-      hairwash:"",
-      hairdye:""
+      services: ""
     };
   },
-  created(){
+  created() {
     this.showService();
   },
-  methods:{
-    showService(){
-      axios.get('api/service').then(response=>{
-        this.haircut=response.data.data.haircut,
-        this.hairwash=response.data.data.hairwash,
-        this.hairdye=response.data.data.hairdye
+  methods: {
+    showService() {
+      axios.get("api/service").then(response => {
+        this.services = response.data.data.service;
       });
     }
   }
-
 };
 </script>
 

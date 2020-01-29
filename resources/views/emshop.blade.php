@@ -10,7 +10,6 @@
 @endsection
 
 @section('scripts')
-<script src="js/quantity_products_Vue.js"></script>
 <script>
     new WOW().init();
 </script>

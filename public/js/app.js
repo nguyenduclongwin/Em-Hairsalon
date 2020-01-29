@@ -2193,115 +2193,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      news: "",
+      sales: "",
+      products: ""
+    };
+  },
+  created: function created() {
+    this.showStore();
+  },
+  methods: {
+    showStore: function showStore() {
+      var _this = this;
+
+      axios.get('api/emshop').then(function (response) {
+        _this.news = response.data.data["new"], _this.sales = response.data.data.sale, _this.products = response.data.data.product;
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -3190,168 +3102,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      haircut: "",
-      hairwash: "",
-      hairdye: ""
+      services: ""
     };
   },
   created: function created() {
@@ -3361,8 +3115,8 @@ __webpack_require__.r(__webpack_exports__);
     showService: function showService() {
       var _this = this;
 
-      axios.get('api/service').then(function (response) {
-        _this.haircut = response.data.data.haircut, _this.hairwash = response.data.data.hairwash, _this.hairdye = response.data.data.hairdye;
+      axios.get("api/service").then(function (response) {
+        _this.services = response.data.data.service;
       });
     }
   }
@@ -39918,60 +39672,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "EM-shop" }, [
-      _c("div", { staticClass: "head-store" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xl-12 wow rollIn" }, [
-              _c("h2", { staticClass: "main-title-Em-shop" }, [
-                _vm._v("Welcome to EM shop")
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v("Vao shop tich diem hang ngay de duoc giam gia")])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "show_new_products" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              { staticClass: "col-xl-6 col-lg-6 col-md-12 col-sm-12-col-12" },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-xl-12" }, [
-                    _c("img", {
-                      attrs: {
-                        src: "images/image_hair_em_shop1.jpg",
-                        alt: "image_hair_em_shop1.jpg",
-                        width: "95%"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "EM shop luon mang lai nhung san pham cho nguoi dung"
-                      )
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-xl-6 col-lg-6 col-md-12 col-sm-12-col-12" },
-              [
-                _c("div", { staticClass: "row section_products" }, [
+  return _c("div", { staticClass: "EM-shop" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "show_new_products" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-xl-6 col-lg-6 col-md-12 col-sm-12-col-12" },
+            _vm._l(_vm.news, function(item) {
+              return _c(
+                "div",
+                { key: item.id, staticClass: "row section_products" },
+                [
                   _c(
                     "div",
                     {
@@ -39980,7 +39696,7 @@ var staticRenderFns = [
                     [
                       _c("img", {
                         attrs: {
-                          src: "images/images_EM_shop/shampoo_kafen1.jfif",
+                          src: item.photo,
                           alt: "shapoo1.jpg",
                           width: "100%"
                         }
@@ -39997,26 +39713,46 @@ var staticRenderFns = [
                       _c("p", { staticClass: "new_products" }, [_vm._v("New")]),
                       _vm._v(" "),
                       _c("p", { staticClass: "information-product" }, [
-                        _vm._v("Combo 4 dau goi Kafen chi "),
+                        _vm._v(_vm._s(item.name) + " chi "),
                         _c("span", { staticClass: "real_price" }, [
-                          _vm._v("$46")
+                          _vm._v(_vm._s(item.price) + "$")
                         ])
                       ]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(item.description))]),
                       _vm._v(" "),
                       _c("button", { staticClass: "booking_now" }, [
                         _vm._v("Add cart")
                       ])
                     ]
                   )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "row section_products",
-                    staticStyle: { "margin-top": "20px" }
-                  },
-                  [
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "sale_products" }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._l(_vm.sales, function(item) {
+              return _c(
+                "div",
+                {
+                  key: item.id,
+                  staticClass: "col-xl-6",
+                  staticStyle: { "margin-top": "10px" }
+                },
+                [
+                  _c("div", { staticClass: "row section_products" }, [
                     _c(
                       "div",
                       {
@@ -40025,8 +39761,8 @@ var staticRenderFns = [
                       [
                         _c("img", {
                           attrs: {
-                            src: "images/images_EM_shop/shampoo_goldwell.jpg",
-                            alt: "shampoo goldwell",
+                            src: item.photo,
+                            alt: "clean face 1",
                             width: "100%"
                           }
                         })
@@ -40039,14 +39775,28 @@ var staticRenderFns = [
                         staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
                       },
                       [
-                        _c("p", { staticClass: "new_products" }, [
-                          _vm._v("New")
-                        ]),
+                        _c(
+                          "p",
+                          {
+                            staticClass: "information-product",
+                            staticStyle: { display: "inline-block" }
+                          },
+                          [_vm._v(_vm._s(item.name))]
+                        ),
                         _vm._v(" "),
-                        _c("p", { staticClass: "information-product" }, [
-                          _vm._v("Combo 2 dau goi Goldwell chi "),
-                          _c("span", { staticClass: "real_price" }, [
-                            _vm._v("$25")
+                        _c("div", { staticClass: "price_product" }, [
+                          _c("span", [_vm._v("Sale off: ")]),
+                          _vm._v(" "),
+                          _c("i", [
+                            _c("del", [_vm._v(_vm._s(item.price) + "$")])
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "real_price" }, [
+                            _vm._v(
+                              _vm._s(
+                                item.price - (item.price * item.sale) / 100
+                              ) + ".00$"
+                            )
                           ])
                         ]),
                         _vm._v(" "),
@@ -40055,554 +39805,129 @@ var staticRenderFns = [
                         ])
                       ]
                     )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
+                  ])
+                ]
+              )
+            })
+          ],
+          2
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "section_all_product" }, [
+      _vm._m(3),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "container" },
+        _vm._l(_vm.products, function(item) {
+          return _c(
+            "div",
+            { key: item.id, staticClass: "row" },
+            [
+              _c("div", { staticClass: "col-xl-12" }, [
+                _c("h4", { staticClass: "name_items" }, [
+                  _vm._v(_vm._s(item.name_cat))
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._l(item.pro, function(pro) {
+                return _c(
                   "div",
-                  {
-                    staticClass: "row section_products",
-                    staticStyle: {
-                      "margin-top": "20px",
-                      "padding-bottom": "10px"
-                    }
-                  },
+                  { key: pro.id, staticClass: "col-xl-2 section_products" },
                   [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
-                      },
-                      [
-                        _c("img", {
-                          attrs: {
-                            src: "images/images_EM_shop/shampoo_keratin.jfif",
-                            alt: "shampoo keratin",
-                            width: "100%"
-                          }
-                        })
-                      ]
-                    ),
+                    _c("img", {
+                      attrs: { src: pro.photo, alt: "acne mask", width: "100%" }
+                    }),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
-                      },
-                      [
-                        _c("p", { staticClass: "new_products" }, [
-                          _vm._v("New")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "information-product" }, [
-                          _vm._v("Combo 2 dau goi Keratin chi "),
-                          _c("span", { staticClass: "real_price" }, [
-                            _vm._v("$100")
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("button", { staticClass: "booking_now" }, [
-                          _vm._v("Add cart")
-                        ])
-                      ]
-                    )
+                    _c("p", { staticClass: "text_section_products" }, [
+                      _vm._v(_vm._s(pro.name))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "real_price" }, [
+                      _vm._v(_vm._s(pro.price) + "$")
+                    ]),
+                    _vm._v(" "),
+                    _c("button", { staticClass: "booking_now" }, [
+                      _vm._v("Add cart")
+                    ])
                   ]
                 )
-              ]
-            )
+              })
+            ],
+            2
+          )
+        }),
+        0
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "head-store" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-xl-12 wow rollIn" }, [
+            _c("h2", { staticClass: "main-title-Em-shop" }, [
+              _vm._v("Welcome to EM shop")
+            ]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Vao shop tich diem hang ngay de duoc giam gia")])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "sale_products" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              {
-                staticClass: "col-xl-12",
-                staticStyle: { "margin-top": "25px" }
-              },
-              [_c("h3", [_vm._v("Nhung san pham dang duoc sale")])]
-            ),
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-xl-6 col-lg-6 col-md-12 col-sm-12-col-12" },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-xl-12" }, [
+            _c("img", {
+              attrs: {
+                src: "images/image_hair_em_shop1.jpg",
+                alt: "image_hair_em_shop1.jpg",
+                width: "95%"
+              }
+            }),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "col-xl-6",
-                staticStyle: { "margin-top": "10px" }
-              },
-              [
-                _c("div", { staticClass: "row section_products" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "images/images_EM_shop/clean_face_1.jpg",
-                          alt: "clean face 1",
-                          width: "100%"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
-                    },
-                    [
-                      _c(
-                        "p",
-                        {
-                          staticClass: "information-product",
-                          staticStyle: { display: "inline-block" }
-                        },
-                        [_vm._v("Sản phẩm kem trị mụn đén từ The face shop")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price_product" }, [
-                        _c("span", [_vm._v("Sale off: ")]),
-                        _vm._v(" "),
-                        _c("i", [_c("del", [_vm._v("100$")])]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "real_price" }, [_vm._v("75$")])
-                      ]),
-                      _vm._v(" "),
-                      _c("button", { staticClass: "booking_now" }, [
-                        _vm._v("Add cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "col-xl-6",
-                staticStyle: { "margin-top": "10px" }
-              },
-              [
-                _c("div", { staticClass: "row section_products" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "images/images_EM_shop/clean_face_2.jfif",
-                          alt: "clean face 2",
-                          width: "100%"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
-                    },
-                    [
-                      _c(
-                        "p",
-                        {
-                          staticClass: "information-product",
-                          staticStyle: { display: "inline-block" }
-                        },
-                        [
-                          _vm._v(
-                            "Sản phẩm sữa rửa mặt trị mụn Acerola chiết xuất từ quả cherry"
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price_product" }, [
-                        _c("span", [_vm._v("Sale off: ")]),
-                        _vm._v(" "),
-                        _c("i", [_c("del", [_vm._v("100$")])]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "real_price" }, [_vm._v("75$")])
-                      ]),
-                      _vm._v(" "),
-                      _c("button", { staticClass: "booking_now" }, [
-                        _vm._v("Add cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "col-xl-6",
-                staticStyle: { "margin-top": "10px" }
-              },
-              [
-                _c("div", { staticClass: "row section_products" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "images/images_EM_shop/clean_face_3.jfif",
-                          alt: "clean face 3",
-                          width: "100%"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
-                    },
-                    [
-                      _c(
-                        "p",
-                        {
-                          staticClass: "information-product",
-                          staticStyle: { display: "inline-block" }
-                        },
-                        [
-                          _vm._v(
-                            "Sản phẩm kem trị mụn Mong bear chiết xuất từ hạt đậu nành"
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price_product" }, [
-                        _c("span", [_vm._v("Sale off: ")]),
-                        _vm._v(" "),
-                        _c("i", [_c("del", [_vm._v("100$")])]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "real_price" }, [_vm._v("75$")])
-                      ]),
-                      _vm._v(" "),
-                      _c("button", { staticClass: "booking_now" }, [
-                        _vm._v("Add cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "col-xl-6",
-                staticStyle: { "margin-top": "10px" }
-              },
-              [
-                _c("div", { staticClass: "row section_products" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4"
-                    },
-                    [
-                      _c("img", {
-                        attrs: {
-                          src: "images/images_EM_shop/shampoo_biotin1.jpg",
-                          alt: "shapoo biotin",
-                          width: "100%"
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8"
-                    },
-                    [
-                      _c(
-                        "p",
-                        {
-                          staticClass: "information-product",
-                          staticStyle: { display: "inline-block" }
-                        },
-                        [_vm._v("Sữa rửa mặt Biotin")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "price_product" }, [
-                        _c("span", [_vm._v("Sale off: ")]),
-                        _vm._v(" "),
-                        _c("i", [_c("del", [_vm._v("100$")])]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "real_price" }, [_vm._v("75$")])
-                      ]),
-                      _vm._v(" "),
-                      _c("button", { staticClass: "booking_now" }, [
-                        _vm._v("Add cart")
-                      ])
-                    ]
-                  )
-                ])
-              ]
-            )
+            _c("p", [
+              _vm._v("EM shop luon mang lai nhung san pham cho nguoi dung")
+            ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "section_all_product" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xl-12 Emsalon_target" }, [
-              _c("h3", { staticClass: "title_Emsalon_target" }, [
-                _vm._v("Khách hàng luôn là mục tiêu hàng đầu của Em Hair Salon")
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xl-12" }, [
-              _c("h4", { staticClass: "name_items" }, [
-                _vm._v("Mat na tri mun")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-xl-12" }, [
-              _c("h4", { staticClass: "name_items" }, [
-                _vm._v("Mat na tri mun")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-2 section_products" }, [
-              _c("img", {
-                attrs: {
-                  src: "images/images_EM_shop/acne_mask_1.jpg",
-                  alt: "acne mask",
-                  width: "100%"
-                }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "text_section_products" }, [
-                _vm._v("Mặt nạ CC Menalo 20 miếng từ Nhật Bản  ")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "real_price" }, [_vm._v("đ50.000")]),
-              _vm._v(" "),
-              _c("button", { staticClass: "booking_now" }, [_vm._v("Add cart")])
-            ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-xl-12", staticStyle: { "margin-top": "25px" } },
+      [_c("h3", [_vm._v("Nhung san pham dang duoc sale")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-xl-12 Emsalon_target" }, [
+          _c("h3", { staticClass: "title_Emsalon_target" }, [
+            _vm._v("Khách hàng luôn là mục tiêu hàng đầu của Em Hair Salon")
           ])
         ])
       ])
@@ -42375,107 +41700,81 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "service-details" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-xl-6 content-service-details" }, [
-            _c("div", { staticClass: "row" }, [
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-xl-8" }, [
-                _c("h3", { staticClass: "title-content-service-details" }, [
-                  _vm._v("Haircut and styling")
+      _c(
+        "div",
+        { staticClass: "container" },
+        [
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._l(_vm.services, function(item) {
+            return _c(
+              "div",
+              { key: item.id, staticClass: "row massage-services" },
+              [
+                _c("div", { staticClass: "col-xl-6" }, [
+                  _c("h3", { staticClass: "title-content-service-details" }, [
+                    _vm._v(_vm._s(item.name_cat))
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "table",
+                    { staticClass: "table table-bordered table-success" },
+                    [
+                      _vm._m(2, true),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(item.service, function(service) {
+                          return _c("tr", { key: service.id }, [
+                            _c("td", [_vm._v(_vm._s(service.service))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(service.price))])
+                          ])
+                        }),
+                        0
+                      )
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
-                _c(
-                  "table",
-                  { staticClass: "table table-bordered table-success" },
-                  [
-                    _vm._m(3),
-                    _vm._v(" "),
+                _c("div", { staticClass: "col-xl-6 align-self-center" }, [
+                  _c("div", { staticClass: "images-massage" }, [
                     _c(
-                      "tbody",
-                      _vm._l(_vm.haircut, function(item) {
-                        return _c("tr", { key: item.id }, [
-                          _c("td", [_vm._v(_vm._s(item.service))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.price) + " $")])
-                        ])
+                      "div",
+                      { staticClass: "row" },
+                      _vm._l(item.img, function(img) {
+                        return _c(
+                          "div",
+                          {
+                            key: img.id,
+                            staticClass:
+                              "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown",
+                            attrs: {
+                              "data-wow-duration": "2s",
+                              "data-wow-delay": "0.1s"
+                            }
+                          },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src: img.img,
+                                alt: "massage-services1.jpg",
+                                width: "100%"
+                              }
+                            })
+                          ]
+                        )
                       }),
                       0
                     )
-                  ]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(4)
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row hair-wash-services" }, [
-          _vm._m(5),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-xl-6" }, [
-            _c("h3", { staticClass: "title-content-service-details" }, [
-              _vm._v("hairwash")
-            ]),
-            _vm._v(" "),
-            _c("table", { staticClass: "table table-bordered table-success" }, [
-              _vm._m(6),
-              _vm._v(" "),
-              _c(
-                "tbody",
-                _vm._l(_vm.hairwash, function(item) {
-                  return _c("tr", { key: item.id }, [
-                    _c("td", [_vm._v(_vm._s(item.service))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.price) + " $")])
                   ])
-                }),
-                0
-              )
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(7),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row", staticStyle: { "margin-top": "70px" } },
-          [
-            _vm._m(8),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-xl-6" }, [
-              _c("h3", { staticClass: "title-content-service-details" }, [
-                _vm._v("color")
-              ]),
-              _vm._v(" "),
-              _c(
-                "table",
-                { staticClass: "table table-bordered table-success" },
-                [
-                  _vm._m(9),
-                  _vm._v(" "),
-                  _c(
-                    "tbody",
-                    _vm._l(_vm.hairdye, function(item) {
-                      return _c("tr", { key: item.id }, [
-                        _c("td", [_vm._v(_vm._s(item.service))]),
-                        _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.price) + " $")])
-                      ])
-                    }),
-                    0
-                  )
-                ]
-              )
-            ])
-          ]
-        )
-      ])
+                ])
+              ]
+            )
+          })
+        ],
+        2
+      )
     ])
   ])
 }
@@ -42618,307 +41917,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col-xl-12 col-lg-12 col-md-12 col-sm-6 col-6" },
-      [
-        _c(
-          "h2",
-          {
-            staticClass: "text-EM wow rollIn",
-            attrs: { "data-wow-duration": "1.5s" }
-          },
-          [_vm._v("EM Hair Salon")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xl-4" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-xl-12 col-sm-6 col-6" }, [
-          _c("img", {
-            attrs: {
-              src: "images/em-hair-cut2.jpg",
-              alt: "em-hair-cut2.jpg",
-              width: "95%"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-xl-12 col-sm-6 col-6",
-            staticStyle: { "margin-top": "10px" }
-          },
-          [
-            _c("img", {
-              attrs: {
-                src: "images/em-hair-cut2.jpg",
-                alt: "em-hair-cut2.jpg",
-                width: "95%"
-              }
-            })
-          ]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "thead",
-      { staticStyle: { background: "#171616", color: "#fff" } },
-      [
-        _c("tr", [
-          _c("th", [_vm._v("Service")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Price")])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xl-6 video-service" }, [
-      _c("iframe", {
-        attrs: {
-          width: "100%",
-          height: "315",
-          src: "https://www.youtube.com/embed/yX0YWLWXeDo",
-          frameborder: "0",
-          allow:
-            "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-          allowfullscreen: ""
-        }
-      }),
-      _vm._v(" "),
-      _c("p", [_vm._v('"Trai nghiem tai EM Hair salon"')])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xl-6 image-wash-services" }, [
-      _c("p", [_vm._v("Trai nghiem goi dau tai Em Hair salon")]),
-      _vm._v(" "),
-      _c("img", {
-        attrs: {
-          src: "images/images_services/khi_02.jpg",
-          alt: "hair-wash-services.png",
-          width: "100%"
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "thead",
-      { staticStyle: { background: "#171616", color: "#fff" } },
-      [
-        _c("tr", [
-          _c("th", [_vm._v("Service")]),
-          _vm._v(" "),
-          _c("th", [_vm._v("Price")])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row massage-services" }, [
-      _c("div", { staticClass: "col-xl-6" }, [
-        _c("h3", { staticClass: "title-content-service-details" }, [
-          _vm._v("massage")
-        ]),
-        _vm._v(" "),
-        _c("table", { staticClass: "table table-bordered table-success" }, [
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-xl-12 col-lg-12 col-md-12 col-sm-6 col-6" },
+        [
           _c(
-            "thead",
-            { staticStyle: { background: "#171616", color: "#fff" } },
-            [
-              _c("tr", [
-                _c("th", [_vm._v("Service")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Price")])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td", [_vm._v("Men's haircut")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$100+")])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("Men's haircut")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$100+")])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("Men's haircut")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$100+")])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("Men's haircut")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$100+")])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("Men's haircut")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("$100+")])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-xl-6" }, [
-        _c("div", { staticClass: "images-massage" }, [
-          _c("div", { staticClass: "row" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown",
-                attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.1s" }
-              },
-              [
-                _c("img", {
-                  attrs: {
-                    src: "images/images_services/massage-services1.jpg",
-                    alt: "massage-services1.jpg",
-                    width: "100%"
-                  }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown",
-                attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.4s" }
-              },
-              [
-                _c("img", {
-                  staticStyle: { "margin-top": "50px" },
-                  attrs: {
-                    src: "images/images_services/massage-services2.jpg",
-                    alt: "massage-services2.jpg",
-                    width: "100%"
-                  }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInDown",
-                attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.7s" }
-              },
-              [
-                _c("img", {
-                  staticStyle: { "margin-top": "100px" },
-                  attrs: {
-                    src: "images/images_services/massage-services3.jpg",
-                    alt: "massage-services3.jpg",
-                    width: "100%"
-                  }
-                })
-              ]
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-xl-6" }, [
-      _c("div", { staticClass: "images-massage" }, [
-        _c("div", { staticClass: "row" }, [
-          _c(
-            "div",
+            "h2",
             {
-              staticClass:
-                "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInUp",
-              attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.1s" }
+              staticClass: "text-EM wow rollIn",
+              attrs: { "data-wow-duration": "1.5s" }
             },
-            [
-              _c("img", {
-                attrs: {
-                  src: "images/images_services/massage-services1.jpg",
-                  alt: "massage-services1.jpg",
-                  width: "100%"
-                }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInUp",
-              attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.4s" }
-            },
-            [
-              _c("img", {
-                staticStyle: { "margin-top": "50px" },
-                attrs: {
-                  src: "images/images_services/massage-services2.jpg",
-                  alt: "massage-services2.jpg",
-                  width: "100%"
-                }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 wow bounceInUp",
-              attrs: { "data-wow-duration": "2s", "data-wow-delay": "0.7s" }
-            },
-            [
-              _c("img", {
-                staticStyle: { "margin-top": "100px" },
-                attrs: {
-                  src: "images/images_services/massage-services3.jpg",
-                  alt: "massage-services3.jpg",
-                  width: "100%"
-                }
-              })
-            ]
+            [_vm._v("EM Hair Salon")]
           )
-        ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-xl-12 video-service" }, [
+        _c("iframe", {
+          attrs: {
+            width: "70%",
+            height: "438",
+            src: "https://www.youtube.com/embed/yX0YWLWXeDo",
+            frameborder: "0",
+            allow:
+              "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+            allowfullscreen: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("p", [_vm._v('"Trai nghiem tai EM Hair salon"')])
       ])
     ])
   },
@@ -42931,7 +41959,7 @@ var staticRenderFns = [
       { staticStyle: { background: "#171616", color: "#fff" } },
       [
         _c("tr", [
-          _c("th", [_vm._v("Color")]),
+          _c("th", [_vm._v("Service")]),
           _vm._v(" "),
           _c("th", [_vm._v("Price")])
         ])

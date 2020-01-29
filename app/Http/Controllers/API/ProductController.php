@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use Illuminate\Support\Facades\Validator;
+
 class ProductController extends BaseController
 {
     /**
@@ -15,8 +17,25 @@ class ProductController extends BaseController
      */
     public function index()
     {
-        $product=Product::all();
-        return $this->sendResponse($product->toArray(),'Products retrieved successfully');
+        $new = Product::latest()->take(3)->get();
+        $sale = Product::where('sale', '>', '0')->get();
+        $cat_parent = Category::where('slug', 'product')->get();
+        $cat_pro = Category::where('parent_id', $cat_parent[0]->id)->get();
+        $i=0;
+        while($i<count($cat_pro)) {
+            $pro= Category::join('products', 'categories.id', '=', 'products.cat_id')->where('cat_id', $cat_pro[$i]->id)->get();
+            $product=[
+            'name_cat'=>$cat_pro[$i]->name_cat,
+            'pro'=> $pro ];
+            $products[]=$product;
+            $i++;
+        }
+        return $this->sendResponse([
+            'new' => $new,
+            'sale' => $sale,
+            'cat' => $cat_pro,
+            'product' => $products
+        ], 'Products retrieved successfully');
     }
 
     /**
@@ -24,19 +43,19 @@ class ProductController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request,Product $product)
+    public function create(Request $request, Product $product)
     {
-        $input=$request->all();
-        $validate=Validator::make($input,[
-            'name'=>'required',
-            'detail'=>'required'
+        $input = $request->all();
+        $validate = Validator::make($input, [
+            'name' => 'required',
+            'detail' => 'required'
         ]);
-        if($validate->fails()){
-            return $this->sendError('Validation error.',$validate->errors());
+        if ($validate->fails()) {
+            return $this->sendError('Validation error.', $validate->errors());
         }
-        $product->name=$input['name'];
-        $product->detail=$input['detail'];
-        return $this->sendResponse($product->toArray(),'Product created successfully');
+        $product->name = $input['name'];
+        $product->detail = $input['detail'];
+        return $this->sendResponse($product->toArray(), 'Product created successfully');
     }
 
     /**
@@ -47,17 +66,19 @@ class ProductController extends BaseController
      */
     public function store(Request $request)
     {
-        $input=$request->all();
-        $validator=Validator::make($input,
-        [
-            'name'=>'required',
-            'detail'=>'required'
-        ]);
-        if($validator->fails()){
-            return $this->sendError('Validation Error.',$validator->errors());
+        $input = $request->all();
+        $validator = Validator::make(
+            $input,
+            [
+                'name' => 'required',
+                'detail' => 'required'
+            ]
+        );
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error.', $validator->errors());
         }
-        $product=Product::create($input);
-        return $this->sendResponse($product->toArray(),'Product Created successfully');
+        $product = Product::create($input);
+        return $this->sendResponse($product->toArray(), 'Product Created successfully');
     }
 
     /**
@@ -68,11 +89,11 @@ class ProductController extends BaseController
      */
     public function show($id)
     {
-        $product=Product::find($id);
-        if(is_null($product)){
+        $product = Product::find($id);
+        if (is_null($product)) {
             return $this->sendError('Product Not Found.');
         }
-        return $this->sendResponse($product->toArray(),'Product retrieved successfully.');
+        return $this->sendResponse($product->toArray(), 'Product retrieved successfully.');
     }
 
     /**
@@ -93,21 +114,21 @@ class ProductController extends BaseController
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product,$id)
+    public function update(Request $request, Product $product, $id)
     {
-        $input=$request->all();
-        $validator=Validator::make($input,[
-            'name'=>'required',
-            'detail'=>'required'
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'name' => 'required',
+            'detail' => 'required'
         ]);
-        if($validator->fails()){
-            return $this->sendError('Validation Error',$validator->errors());
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error', $validator->errors());
         }
-        $product=Product::find($id);
-        $product->name=$input['name'];
-        $product->detail=$input['detail'];
+        $product = Product::find($id);
+        $product->name = $input['name'];
+        $product->detail = $input['detail'];
         $product->save();
-        return $this->sendResponse($product->toArray(),'Product Updated Successfully');
+        return $this->sendResponse($product->toArray(), 'Product Updated Successfully');
     }
 
     /**
@@ -116,9 +137,9 @@ class ProductController extends BaseController
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product,$id)
+    public function destroy(Product $product, $id)
     {
         $product->delete();
-        return $this->sendResponse($product->toArray(),'Product deleted successfully');
+        return $this->sendResponse($product->toArray(), 'Product deleted successfully');
     }
 }
