@@ -70,23 +70,88 @@
             }
         }
         .nav-cart{
-            text-align: right;
             .review-booked-calendars{
-                margin-right: 10px;
+                // margin-right: 10px;
             }
             .link_cart{
                 @include cart;
                 .cart_logo{
                     margin-right: 3px;
                 }
+                .quantity_in_cart{
+                    // position: absolute;
+                    // background: red;
+                    // border-radius: 50%;
+                    background-color: #e7272d;
+                    border-radius: 50%;
+                    color: #ffffff;
+                    font-size: 12px;
+                    line-height: 18px;
+                    min-height: 19px;
+                    min-width: 19px;
+                    position: absolute;
+                    text-align: center;
+                    top: -3px;
+                    right: -17px;
+                }
             }
             a{
-                margin-left:10px;
+                margin-left: 10px;
                 color: #fff;
             }
             a:hover{
                 text-decoration: none;
                 color:#bb8c4b;
+            }
+            .dropdown-toggle::after{
+                display: none;
+            }
+            .dropdown-menu a{
+                color: #000;
+            }
+            .dropdown_cart{
+                display: inline-block;
+                .total_dropdown_cart{
+                    margin-top: 15px;
+                    padding-bottom: 15px;
+                    font-size: 1.25rem;
+                    font-family: 'Heebo-Regular';
+                    padding-left: 10px;
+                    border-bottom: 1px solid #b7b7b7;
+                }
+                .dropdown-menu{
+                    box-shadow: 1px 1px 20px #504f4f
+                }
+                .show_some_product_in_cart{
+                    padding: 15px 0px;
+                    list-style: none;
+                    width:400px; 
+                    .image_dropdown_cart{
+                        display: inline-block;
+                    }
+                    .text_dropdown_cart{
+                        display:inline-block;
+                        .price_product_cart{
+                            display: inline-block;
+                            color: red;
+                        }
+                        .quantity_product_cart{
+                            display: inline-block;
+                        }
+                    }
+                }
+                .dropdown-menu a{
+                    color: #000;
+                }
+                .see_all_product{
+                    text-align: center;
+                    border-top: 1px solid #b7b7b7;
+                    a{
+                        margin-top: 10px;
+                        padding:0 50px;
+                        color: #fff;
+                    }
+                }
             }
         }
     }
@@ -131,11 +196,10 @@
 
 .main_carousel{
     .item{
-        height: 650px;
-        .overlay{
+         .overlay{
             @include bg_overlay;
         }
-    
+
         .title-overlay{
             font-family: 'Raleway-Thin';
             font-weight: 1000;
@@ -147,8 +211,8 @@
             color: #fff;
             font-size: 2.1rem;
             text-transform: uppercase;
+            }
         }
-    }
     .book-online{
         position: absolute;
         z-index: 62;
@@ -463,11 +527,77 @@ footer{
 
 
 // Responsive  
-@media only screen and(min-width:320px){
-    .title-overlay{
-        font-size: 20px;
-        font-weight: 500;
+@media only screen and (min-width:1025px){
+    .cart_responsive{
+        display: none;
     }
+    .main-nav-header{
+        margin-left: 30%;
+    }
+    .nav-cart{
+        text-align: right;
+    }
+}
+@media only screen and (max-width:1024px){
+    // .cart{
+    //     display: none;
+    // }
+    .cart_responsive{
+        display: block;
+    }
+    .nav-cart{
+        text-align: right;
+    }
+    .main_carousel{
+        .item{
+            .title-overlay{
+            font-size: 30px;
+            font-weight: 500;
+            top:40%;
+            }
+        }
+    }
+    // .main-nav-header{
+    //     margin-left: 30%;
+    // }
+
+}
+@media only screen and (max-width:992px){
+    .title-overlay{
+        display: block;
+        font-size: 1.6rem;
+    }
+    .nav-cart{
+        display: inline-block;
+    }
+    .cart_responsive{
+        display: none;
+    }
+}
+@media only screen and (max-width:800px){
+    // .cart{
+    //     display: none;
+    // }
+    .cart_responsive{
+        display: block;
+    }
+    .main_carousel{
+        .item{
+            .title-overlay{
+            font-size: 24px;
+            font-weight: 500;
+            top:40%;
+            }
+        }
+        .book-online{
+            font-size: 23px;
+            padding: 10px 8px;
+        }
+    }
+    // .main-nav-header{
+    //     margin-left: 30%;
+    // }
+
 }
 @media only screen and (max-width:768px){
     // .cart{
@@ -476,8 +606,18 @@ footer{
     // .nav-cart{
     //     display: none;
     // }
-    .book-online{
-        display: none;
+    .main_carousel{
+        .item{
+            .title-overlay{
+            font-size: 23px;
+            font-weight: 500;
+            top:40%;
+            }
+        }
+        .book-online{
+            font-size: 23px;
+            padding: 10px 8px;
+        }
     }
     .previous-header{
         color: #fff;
@@ -499,44 +639,99 @@ footer{
     .Em_logo_responsive{
         width:60px;
     }
-    .title-overlay{
-        display: none ;
-    }
     .cart_responsive{
         display: none;
     }
 
 }
-@media only screen and (max-width:992px){
-    .title-overlay{
-        display: block;
-        font-size: 1.6rem;
-    }
-    .nav-cart{
-        display: inline-block;
-    }
-    .cart_responsive{
-        display: none;
-    }
-}
-@media only screen and (max-width:1024px){
+@media only screen and (max-width:600px){
     // .cart{
     //     display: none;
     // }
-    .cart_responsive{
-        display: block;
-    }
-
-    // .main-nav-header{
-    //     margin-left: 30%;
+    // .nav-cart{
+    //     display: none;
     // }
-
-}
-@media only screen and (min-width:1025px){
+    .main_carousel{
+        .item{
+            .title-overlay{
+            font-size: 18px;
+            font-weight: 500;
+            top:40%;
+            }
+        }
+        .book-online{
+            font-size: 15px;
+            padding: 10px 8px;
+        }
+    }
+    .previous-header{
+        color: #fff;
+        padding: 5px 0px;
+    }
+    .title-pre-header{
+        font-size: 0.75rem;
+        font-weight: 300;
+        display: inline-block;
+    }
+    .alarm_responsive{
+        width:13px;
+    }
+    .phone-number-responsive{
+        .phone-icon{
+            margin-left: 10px;
+        }
+    }
+    .Em_logo_responsive{
+        width:60px;
+    }
     .cart_responsive{
         display: none;
     }
-    .main-nav-header{
-        margin-left: 30%;
+
+}
+@media only screen and (max-width:414px){
+    .main_carousel{
+        .item{
+            .title-overlay{
+            font-size: 12px;
+            font-weight: 500;
+            top:40%;
+            }
+        }
+        .book-online{
+            font-size: 10px;
+            padding: 10px 8px;
+        }
     }
 }
+@media only screen and (max-width:375px){
+    .main_carousel{
+        .item{
+            .title-overlay{
+            font-size: 11px;
+            font-weight: 500;
+            top:40%;
+            }
+        }
+        .book-online{
+            font-size: 10px;
+            padding: 10px 8px;
+        }
+    }
+}
+@media only screen and (max-width:320px){
+    .main_carousel{
+        .item{
+            .title-overlay{
+            font-size: 9px;
+            font-weight: 500;
+            top:40%;
+            }
+        }
+        .book-online{
+            font-size: 10px;
+            padding:8px 6px;
+        }
+    }
+}
+

@@ -3,10 +3,21 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+// app.js
+import Vue from 'vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+// app.js
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+// Install BootstrapVue
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
 
 require('./bootstrap');
 
 window.Vue = require('vue');
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -25,6 +36,7 @@ Vue.component('em-about', require('./components/about.vue').default);
 Vue.component('footer-footer', require('./components/footer.vue').default);
 Vue.component('em-service', require('./components/service.vue').default);
 Vue.component('em-shop', require('./components/emshop.vue').default);
+Vue.component('em-contact', require('./components/contact.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

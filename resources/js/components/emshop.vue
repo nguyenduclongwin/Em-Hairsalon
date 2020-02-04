@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                             <p class="new_products">New</p>
-                            <p class="information-product">{{item.name}} chi <span class="real_price">{{item.price}}$</span></p>
+                            <p class="information-product">{{item.name}} chỉ <span class="real_price">{{item.price-(item.price*item.sale/100)}}$</span></p>
                             <p>{{item.description}}</p>
                             <button class="booking_now">Add cart</button>                        
                         </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                             <p style="display: inline-block;" class="information-product">{{item.name}}</p>
-                            <div class="price_product"> <span>Sale off: </span> <i><del>{{item.price}}$</del></i> <p class="real_price">{{item.price-(item.price*item.sale/100)}}.00$</p></div>   
+                            <div class="price_product"> <span>Sale off: </span> <i><del>{{item.price}}$</del></i> <p class="real_price">{{item.price-(item.price*item.sale/100)}}$</p></div>   
                             <button class="booking_now">Add cart</button>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                 <div v-for="pro in item.pro" :key="pro.id" class="col-xl-2 section_products">
                     <img :src="pro.photo" alt="acne mask" width="100%">
                     <p class="text_section_products">{{pro.name}}</p>
-                    <p class="real_price">{{pro.price}}$</p>
+                    <p class="real_price">{{pro.price-(pro.price*pro.sale/100)}}$</p>
                     <button class="booking_now">Add cart</button>
                 </div>
                 <!-- <div class="col-xl-2 section_products">

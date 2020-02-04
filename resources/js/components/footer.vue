@@ -104,8 +104,8 @@
   methods: {
     showHeader() {
       axios.get("/api/index").then(response => {
-        (this.contact = response.data.data.contact),
-          (this.link = response.data.data.link);
+        this.contact = response.data.data.contact,
+          this.link = response.data.data.link;
       });
     }
   }

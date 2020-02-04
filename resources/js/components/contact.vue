@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="contact.css">
-    <title>Liên hệ</title>
-</head>
-
-<body>
+<template>
     <div class="contact">
         <div class="container">
-            <div id="app">
                 <div class="row">
                     <div class="col-xl-8 formMess">
-                        <form action="" method="" :submit.prevent="submitMessage">
+                        <form action="" method="" style="height:100%">
                             <div class="row">
                                 <div class="col-xl-6">
                                     <label for="fname">First Name</label>
@@ -39,49 +26,61 @@
                     <div class="col-xl-4 infoSalon">
                         <div>
                             <h5>address:</h5>
-                            <p>{{ address }}</p>
+                            <p v-for="item in address" :key="item.id">{{ item[0] }} - {{ item[1] }}</p>
                             <h5>phone:</h5>
-                            <p>{{ phone }}</p>
+                            <p v-for="item in phone" :key="item.id">{{item[0]}}: (+84){{ item[1] }}</p>
                             <h5>email address:</h5>
-                            <p>{{ email }}</p>
+                            <p v-for="item in salon" :key="item.email">{{ item.email }}</p>
                             <h5>website:</h5>
-                            <p>{{ website }}</p>
+                            <p v-for="item in salon" :key="item.website">{{ item.website }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="title">
                     <h3>{{wishes}}</h3>
                     <button type="submit">Visit Our Salon Now</button>
-                </div>
-            </div>
+                </div>  
         </div>
-    </div>    
+    </div>
+</template>
 
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/popper.min.js"></script>
-    <script src="https://kit.fontawesome.com/ead959d8f3.js" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script>
-        var app = new Vue({
-            el: "#app",
-            data: {
+<script>
+    export default {
+        data() {
+            return{
                 s: 'form-control',
                 send: 'Send Message',
-                address: 'No. 53, Pho Duc Chinh, Ba Dinh, Hanoi.',
-                phone:'024 6687 5115',
-                email: 'emhairsalon@reach.org.vn',
-                website: 'http://www.reach.org.vn',
+                name:'',
+                address: '',
+                phone:'',
+                salon:'',
                 wishes: 'We want your hair to look fabulous',
+                };
+            },
+            created(){
+                this.showContact();
             },
             methods: {
-                submitMessage(){
-                    alert.this
+                showContact(){
+                    axios.get('api/contact').then(response=>{
+                        var contact=response.data.data.contact;
+                        var address=[];
+                        var phone=[];
+                        var email=[];
+                        var website=[];
+                        for(var i=0;i<contact.length;i++){
+                        address.push([contact[i].name,contact[i].address]);
+                        phone.push([contact[i].name,contact[i].phone]);
+                        }
+                        this.address=address;
+                        this.phone=phone;
+                        this.salon=response.data.data.salon;
+                   });
                 }
             }
-        })    
-    </script>
-</body>
+    }
+</script>
 
-</html>
+<style lang="scss" scoped>
+
+</style>

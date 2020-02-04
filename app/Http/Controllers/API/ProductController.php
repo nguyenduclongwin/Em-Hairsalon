@@ -15,6 +15,7 @@ class ProductController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
+    //show sản phẩm
     public function index()
     {
         $new = Product::latest()->take(3)->get();
@@ -43,20 +44,20 @@ class ProductController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, Product $product)
-    {
-        $input = $request->all();
-        $validate = Validator::make($input, [
-            'name' => 'required',
-            'detail' => 'required'
-        ]);
-        if ($validate->fails()) {
-            return $this->sendError('Validation error.', $validate->errors());
-        }
-        $product->name = $input['name'];
-        $product->detail = $input['detail'];
-        return $this->sendResponse($product->toArray(), 'Product created successfully');
-    }
+    // public function create(Request $request, Product $product)
+    // {
+    //     $input = $request->all();
+    //     $validate = Validator::make($input, [
+    //         'name' => 'required',
+    //         'detail' => 'required'
+    //     ]);
+    //     if ($validate->fails()) {
+    //         return $this->sendError('Validation error.', $validate->errors());
+    //     }
+    //     $product->name = $input['name'];
+    //     $product->detail = $input['detail'];
+    //     return $this->sendResponse($product->toArray(), 'Product created successfully');
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -64,14 +65,23 @@ class ProductController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //thêm sản phẩm
     public function store(Request $request)
     {
         $input = $request->all();
         $validator = Validator::make(
             $input,
             [
+                'cat_id'=>'required',
                 'name' => 'required',
-                'detail' => 'required'
+                'description' => 'required',
+                'detail' => 'required',
+                'qty' => 'required',
+                'photo' => 'required',
+                'price' => 'required',
+                'sale' => 'required',
+                'status' => 'required'
+
             ]
         );
         if ($validator->fails()) {
@@ -87,6 +97,7 @@ class ProductController extends BaseController
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
+    //chi tiết sản phẩm
     public function show($id)
     {
         $product = Product::find($id);
@@ -97,38 +108,46 @@ class ProductController extends BaseController
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
+    //cập nhật sản phẩm
     public function update(Request $request, Product $product, $id)
     {
         $input = $request->all();
-        $validator = Validator::make($input, [
-            'name' => 'required',
-            'detail' => 'required'
-        ]);
+        $validator = Validator::make(
+            $input,
+            [
+                'cat_id'=>'required',
+                'name' => 'required',
+                'description' => 'required',
+                'detail' => 'required',
+                'qty' => 'required',
+                'photo' => 'required',
+                'price' => 'required',
+                'sale' => 'required',
+                'status' => 'required'
+
+            ]
+        );
         if ($validator->fails()) {
-            return $this->sendError('Validation Error', $validator->errors());
+            return $this->sendError('Validation Error.', $validator->errors());
         }
-        $product = Product::find($id);
-        $product->name = $input['name'];
-        $product->detail = $input['detail'];
+        $product=Product::find($id);
+        $product->cat_id=$input['cat_id'];
+        $product->name=$input['name'];
+        $product->description=$input['description'];
+        $product->detail=$input['detail'];
+        $product->qty=$input['qty'];
+        $product->photo=$input['photo'];
+        $product->price=$input['price'];
+        $product->sale=$input['sale'];
+        $product->status=$input['status'];
         $product->save();
-        return $this->sendResponse($product->toArray(), 'Product Updated Successfully');
+        return $this->sendResponse($product->toArray(), 'Product Updated successfully');
     }
 
     /**
@@ -137,7 +156,8 @@ class ProductController extends BaseController
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product, $id)
+    //xóa sản phẩm
+    public function destroy(Product $product)
     {
         $product->delete();
         return $this->sendResponse($product->toArray(), 'Product deleted successfully');

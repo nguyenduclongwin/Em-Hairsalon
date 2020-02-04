@@ -18,8 +18,10 @@ class BookController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
+    //hiển thị danh dách booking
     public function index(Request $request)
     {
+        //nếu có request từ ajax thì trả về danh sách booking,còn không thì trả về giao diện
         if ($request->ajax()) {
             $book = Customer::join('books', 'customers.id', '=', 'books.cus_id')->get(['name', 'gender', 'phone', 'salon', 'service', 'date', 'time', 'message']);
             return datatables($book)->make(true);
@@ -32,6 +34,7 @@ class BookController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
+    //dữ liệu ngày giờ và tình trạng chỗ của trang booking
     public function create()
     {
         $today = Carbon::now('Asia/Ho_Chi_Minh')->format('d/m/Y');
@@ -101,6 +104,7 @@ class BookController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //tạo booking
     public function store(Request $request)
     {
         $input=$request->all();
@@ -186,10 +190,12 @@ class BookController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //giao diện tìm kiếm lịch đã book
     public function findBook()
     {
         return view('book.findbook');
     }
+    //trả về dữ liệu lịch đã đặt
     public function show(Request $request)
     {
         $input=$request->all();
@@ -220,6 +226,7 @@ class BookController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //đổi lịch(giống trang tạo booking)
     public function edit($phone)
     {
         $today = Carbon::now('Asia/Ho_Chi_Minh')->format('d/m/Y');
@@ -291,6 +298,7 @@ class BookController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //đổi lịch
     public function update(Request $request, Book $book, $id, $phone)
     {
         $input=$request->all();
