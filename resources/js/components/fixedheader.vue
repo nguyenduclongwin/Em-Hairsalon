@@ -67,11 +67,48 @@
                         <b-dropdown-item>Something else here...</b-dropdown-item>
                       </b-dropdown> -->
    
+<div class="row">
+            <div class="col-lg-12 col-sm-12 col-12 main-section">
+                <div class="dropdown">
+                    <a href="" class="" data-toggle="dropdown">
+                        <i class="fa fa-shopping-cart cart_logo" aria-hidden="true"></i><sup><span class=" badge badge-pill badge-danger">{{qty_cart}}</span></sup>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="row total-header-section">
+                            <div class="col-lg-6 col-sm-6 col-6">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i><sup> <span class="badge badge-pill badge-danger">{{qty_cart}}</span></sup>
+                            </div>
+                            
+                            <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                                <p>Total: <span class="text-info">${{total}}</span></p>
+                            </div>
+                        </div>
+                       
+                            <div v-for="item in cart" :key="item.id" class="row cart-detail">
+                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                    <img :src="item.photo">
+                                </div>
+                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                    <p>{{item.name}}</p>
+                                    <span class="price text-info">${{item.price*item.quantity}}</span> <span class="count"> Quantity:{{item.quantity}}</span>
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                <a href="#" class="btn btn-primary btn-block">View all</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                      <a
+
+                      <!-- <a
                         style="position:relative;"
                         class="link_cart dropdown-toggle"
                         data-toggle="dropdown"
+                        href=""
                       >
                         <span class="fas fa-shopping-cart cart_logo"></span>
                         <span class="quantity_in_cart">69</span>
@@ -134,7 +171,9 @@
                         <div class="see_all_product">
                           <a href="#" class="btn btn-info">See all</a>
                         </div>
-                      </div>
+                      </div> -->
+
+                      
                     </div>
                   </div>
                 </div>
@@ -260,17 +299,30 @@ export default {
     return {
       salon: "",
       link: "",
-      currentLocation: location.href
+      currentLocation: location.href,
+      cart:"",
+      qty_cart:0,
+      total:0
     };
   },
   created() {
     this.showHeader();
+    this.showCart();
   },
   methods: {
     showHeader() {
       axios.get("/api/index").then(response => {
         this.salon = response.data.data.salon[0];
         this.link = response.data.data.link;
+      });
+    },
+    showCart(){
+      axios.get('/cart').then(response=>{
+        var cart=response.data.data.cart;
+        this.cart=cart
+        this.qty_cart=response.data.data.qty_cart
+        this.total=response.data.data.total
+
       });
     }
   }

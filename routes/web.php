@@ -19,7 +19,8 @@ Route::get('/service','EmController@service')->name('service');
 Route::get('/contact','EmController@contact')->name('contact');
 Route::get('/emshop','EmController@emShop')->name('emshop');
 Route::get('/news','EmController@news')->name('news');
-Route::get('/test',function(){return view('testvue');});
+Route::get('/add-to-cart/{id}','API\ProductController@addToCart');
+Route::get('/cart','API\ProductController@showCart');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -162,4 +162,78 @@ class ProductController extends BaseController
         $product->delete();
         return $this->sendResponse($product->toArray(), 'Product deleted successfully');
     }
+    //cart
+    public function addToCart($id)
+    {
+        $product = Product::find($id);
+        if (!$product) {
+            return $this->sendError(abort(404));
+        }
+        $cart = session()->get('cart');
+        //if cart is empty then the first product
+        if (!$cart) {
+            $cart = [
+                $id => [
+                    "name" => $product->name,
+                    "quantity" => 1,
+                    "price" => $product->price-($product->price*$product->sale/100),
+                    "photo" => $product->photo
+                ]
+            ];
+            session()->put('cart', $cart);
+            
+            return $this->sendResponse(session()->all(),'Product added To Cart Successfully');
+        }
+        //if cart not empty then check if this product exists then increment quantity
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+            session()->put('cart', $cart);
+            return $this->sendResponse(session()->all(),'Product added To Cart Successfully');
+        }
+        //if item not exists in cart then add to cart with quantity=1
+        $cart[$id] = [
+            "name" => $product->name,
+            "quantity" => 1,
+            "price" => $product->price,
+            "photo" => $product->photo
+        ];
+        session()->put('cart', $cart);
+        return $this->sendResponse(session()->all(),'Product added To Cart Successfully');
+    }
+    public function showCart(){
+        $cart = session('cart');
+        
+        $qty_cart=count(session('cart'));
+        $total=0;
+        foreach($cart as $key => $value){
+            $total+=$value['price']*$value['quantity'];
+        }
+        return $this->sendResponse([
+            'cart'=>$cart,
+            'qty_cart'=>$qty_cart,
+            'total'=>$total
+    
+    ],'succsessfully');
+    }
+    public function updateCart(Request $request)
+    {
+        if ($request->id and $request->quantity) {
+            $cart = session()->get('cart');
+            $cart[$request->id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+            session()->flash('success', 'Cart update successfully');
+        }
+    }
+    public function remove(Request $request)
+    {
+        if ($request->id) {
+            $cart = session()->get('cart');
+            if (isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Cart removed successfully');
+        }
+    }
+
 }

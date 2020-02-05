@@ -30,7 +30,7 @@
                             <p class="new_products">New</p>
                             <p class="information-product">{{item.name}} chỉ <span class="real_price">{{item.price-(item.price*item.sale/100)}}$</span></p>
                             <p>{{item.description}}</p>
-                            <button class="booking_now">Add cart</button>                        
+                            <button class="booking_now" v-on:click="addCart(item.id)">Add cart</button>                        
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
                             <p style="display: inline-block;" class="information-product">{{item.name}}</p>
                             <div class="price_product"> <span>Sale off: </span> <i><del>{{item.price}}$</del></i> <p class="real_price">{{item.price-(item.price*item.sale/100)}}$</p></div>   
-                            <button class="booking_now">Add cart</button>
+                            <button class="booking_now" v-on:click="addCart(item.id)">Add cart</button>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                     <img :src="pro.photo" alt="acne mask" width="100%">
                     <p class="text_section_products">{{pro.name}}</p>
                     <p class="real_price">{{pro.price-(pro.price*pro.sale/100)}}$</p>
-                    <button class="booking_now">Add cart</button>
+                    <button class="booking_now" v-on:click="addCart(pro.id)">Add cart</button>
                 </div>
                 <!-- <div class="col-xl-2 section_products">
                     <img src="images/images_EM_shop/acne_mask_1.jpg" alt="acne mask" width="100%">
@@ -135,6 +135,12 @@
                     this.sales=response.data.data.sale,
                     this.products=response.data.data.product
                 })
+            },
+            addCart(id){
+                axios.get('/add-to-cart/'+id).then(response=>{
+                    location.reload();
+                })
+                
             }
         }
     }
