@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 04, 2020 lúc 05:43 AM
+-- Thời gian đã tạo: Th2 08, 2020 lúc 02:30 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.11
 
@@ -74,52 +74,6 @@ CREATE TABLE `books` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `books`
---
-
-INSERT INTO `books` (`id`, `cus_id`, `salon`, `service`, `date`, `time`, `message`, `created_at`, `updated_at`) VALUES
-(2, 8, 'EM1', 'ssssssssss', '', '0000', 'aaaaaaaaa', '2020-01-07 08:23:23', '2020-01-07 08:23:23'),
-(3, 9, 'EM-HairSalon 1', 'gội', '', '0000', 'ss', '2020-01-07 17:56:45', '2020-01-07 17:56:45'),
-(4, 13, 'EM-HairSalon 1', 'gội', '', '0000', 'ddss', '2020-01-07 22:45:19', '2020-01-07 22:45:19'),
-(5, 14, 'EM-HairSalon 1', 'tắm', '', '0000', NULL, '2020-01-07 23:29:15', '2020-01-07 23:29:15'),
-(7, 15, 'EM-HairSalon 1', 'đi vệ sih', '', '2020', 'anh long', '2020-01-08 00:38:05', '2020-01-08 00:38:05'),
-(8, 16, 'EM-HairSalon 1', 'đi vệ sih', '', '2020', 'anh long111111111111', '2020-01-08 00:39:13', '2020-01-08 00:39:13'),
-(9, 17, 'EM-HairSalon 1', 'tắm', '', '2020', 'anh long', '2020-01-08 08:24:06', '2020-01-08 08:24:06'),
-(10, 18, 'EM-HairSalon 1', 'abc', '', '2020', 'zzz', '2020-01-08 08:27:17', '2020-01-08 08:27:17'),
-(12, 20, 'EM-HairSalon 2', 'Gội,Nhuộm,Hấp', '13/01/2020', '10:00', 'FULL SERVICE', '2020-01-09 01:54:13', '2020-01-11 22:40:34'),
-(13, 22, 'EM-HairSalon 1', 'tắm', '', '2020', 'aaaaa', '2020-01-09 02:53:07', '2020-01-09 02:53:07'),
-(14, 21, 'EM-HairSalon 1', 'tắm', '', '2020', 'aaaaa', '2020-01-09 02:53:29', '2020-01-09 02:53:29'),
-(15, 23, 'EM-HairSalon 1', 'abc', '', '2020', NULL, '2020-01-09 18:53:42', '2020-01-09 18:53:42'),
-(16, 24, 'EM-HairSalon 2', 'abc', '', '2020', NULL, '2020-01-09 19:03:15', '2020-01-09 19:03:15'),
-(18, 27, 'EM-HairSalon 1', 'Hair Cut,Nhuộm', '', '2020', NULL, '2020-01-09 19:34:55', '2020-01-09 19:34:55'),
-(19, 28, 'EM-HairSalon 1', 'Hair Cut,Gội', '', '2020', NULL, '2020-01-09 19:40:30', '2020-01-09 19:40:30'),
-(20, 29, 'EM-HairSalon 1', 'Nhuộm', '', '2020', NULL, '2020-01-09 19:56:29', '2020-01-09 19:56:29'),
-(21, 30, 'EM-HairSalon 1', 'Hair Cut', '', '2020', NULL, '2020-01-09 19:57:30', '2020-01-09 19:57:30'),
-(22, 32, 'EM-HairSalon 1', 'Cắt,Gội,Nhuộm,Hấp', '', '2020', NULL, '2020-01-09 20:15:06', '2020-01-09 20:15:06'),
-(23, 33, 'EM-HairSalon 1', 'Cắt,Gội', '', '2020', NULL, '2020-01-09 20:16:37', '2020-01-09 20:16:37'),
-(24, 34, 'EM-HairSalon 1', 'Cắt', '', '2020', 'QUán như cặc', '2020-01-09 20:17:22', '2020-01-09 20:17:22'),
-(25, 35, 'EM-HairSalon 1', 'Cắt,Gội', '10/01/2020', '08:00', 'sss', '2020-01-10 05:21:29', '2020-01-10 05:21:29'),
-(26, 36, 'EM-HairSalon 2', 'Cắt,Gội,Nhuộm,Hấp', '12/01/2020', '09:00', 'Chất', '2020-01-10 11:31:49', '2020-01-10 11:31:49'),
-(27, 37, 'EM-HairSalon 2', 'Cắt,Gội,Nhuộm', '11/01/2020', '10:30', 'Ngon bổ rẻ', '2020-01-10 18:46:40', '2020-01-10 18:46:40'),
-(28, 38, 'EM-HairSalon 1', 'Cắt,Gội', '12/01/2020', '11:30', 'aa', '2020-01-10 21:44:24', '2020-01-10 21:44:24'),
-(29, 31, 'EM-HairSalon 1', 'Gội,Nhuộm', '12/01/2020', '09:30', 'ssss', '2020-01-10 21:46:37', '2020-01-10 21:46:37'),
-(30, 39, 'EM-HairSalon 2', 'Cắt,Gội,Nhuộm,Hấp', '11/01/2020', '11:00', '0213', '2020-01-10 22:32:32', '2020-01-10 22:32:32'),
-(31, 40, 'EM-HairSalon 1', 'Cắt,Gội,Nhuộm', '11/01/2020', '17:30', '20', '2020-01-10 22:33:13', '2020-01-10 22:33:13'),
-(32, 41, 'EM-HairSalon 2', 'Cắt,Gội,Nhuộm', '11/01/2020', '14:30', '33', '2020-01-10 23:31:04', '2020-01-10 23:31:04'),
-(33, 42, 'EM-HairSalon 1', 'Gội,Nhuộm,Hấp', '11/01/2020', '08:30', '44', '2020-01-10 23:32:04', '2020-01-10 23:32:04'),
-(36, 4, 'EM-HairSalon 2', 'Cắt,Gội,Nhuộm,Hấp', '12/01/2020', '19:30', NULL, '2020-01-12 02:00:11', '2020-01-12 02:00:11'),
-(37, 45, 'EM-HairSalon 2', 'Cắt,Gội,Nhuộm', '12/01/2020', '18:30', NULL, '2020-01-12 02:40:28', '2020-01-12 02:40:28'),
-(38, 46, 'EM-HairSalon 2', 'Cắt,Gội,Nhuộm,Hấp', '12/01/2020', '19:00', NULL, '2020-01-12 02:44:37', '2020-01-12 02:44:37'),
-(39, 47, 'EM-HairSalon 2', 'Cắt,Gội', '12/01/2020', '17:30', NULL, '2020-01-12 02:47:46', '2020-01-12 02:47:46'),
-(40, 48, 'EM-HairSalon 2', 'Cắt', '13/01/2020', '10:30', NULL, '2020-01-12 02:48:27', '2020-01-12 02:48:27'),
-(41, 49, 'EM-HairSalon 2', 'Cắt,Gội', '13/01/2020', '11:30', NULL, '2020-01-12 02:50:29', '2020-01-12 02:50:29'),
-(42, 50, 'EM-HairSalon 2', 'Cắt', '13/01/2020', '09:30', NULL, '2020-01-12 02:51:40', '2020-01-12 02:51:40'),
-(43, 51, 'EM-HairSalon 2', 'Cắt', '13/01/2020', '16:00', NULL, '2020-01-12 02:52:41', '2020-01-12 02:52:41'),
-(45, 52, 'EM-HairSalon 1', 'Cắt,Gội,Nhuộm,Hấp', '13/01/2020', '10:30', 'anh long dep trai', '2020-01-12 09:19:53', '2020-01-12 09:19:53'),
-(50, 53, 'EM-HairSalon 1', 'Cắt,Gội', '13/01/2020', '15:00', NULL, '2020-01-12 18:48:30', '2020-01-12 18:48:30'),
-(52, 55, 'EM-HairSalon 2', 'Gội,Nhuộm,Hấp', '14/01/2020', '11:30', NULL, '2020-01-12 22:51:47', '2020-01-12 22:51:47');
-
 -- --------------------------------------------------------
 
 --
@@ -180,7 +134,7 @@ INSERT INTO `combos` (`id`, `name_combo`, `service_1`, `service_2`, `service_3`,
 (1, 'Combo 1', 'Cắt', 'Uốn', 'Hấp Colagen', 'Phủ Nano', 'Gội đầu thư giãn', 'Sấy tạo kiểu hoàn thiện', '50.00', '25', '2019-12-09 19:09:26', '2019-12-09 19:09:26'),
 (2, 'Combo 2', ' Cắt', 'Nhuộm', 'Hấp Colagen', 'Phủ Nano', 'Gội đầu thư giãn', 'Sấy tạo kiểu hoàn thiện', '75.00', '25', '2019-12-09 19:09:26', '2019-12-09 19:09:26'),
 (3, 'Combo 3', 'Cắt', 'Ép', 'Hấp Colagen', 'Phủ Nano', 'Gội đầu thư giãn', 'Sấy tạo kiểu hoàn thiện', '60.00', '10', '2019-12-09 19:09:26', '2019-12-09 19:09:26'),
-(4, 'Anh Combo', 'Cắt', 'Gội đầu thư giãn', 'Massage mặt', 'Sấy tạo kiểu hoàn thiện', 'Thanh toán', 'Đuổi về', '1000.00', '20', '2019-12-09 19:09:26', '2020-02-01 00:50:28');
+(4, 'Anh Combo', 'Cắt', 'Gội đầu thư giãn', 'Massage mặt', 'Sấy tạo kiểu hoàn thiện', '', '', '1000.00', '20', '2019-12-09 19:09:26', '2020-02-01 00:50:28');
 
 -- --------------------------------------------------------
 
@@ -252,9 +206,7 @@ INSERT INTO `customers` (`id`, `name`, `gender`, `phone`, `email`, `address`, `c
 (14, 'Nguyễn Đức Long', 'Male', '081235555822', NULL, NULL, '2020-01-07 23:28:10', '2020-01-07 23:28:10'),
 (15, 'long', 'Male', '0898740374', NULL, NULL, '2020-01-08 00:38:05', '2020-01-08 00:38:05'),
 (16, 'long', 'Male', '08987403742', NULL, NULL, '2020-01-08 00:39:13', '2020-01-08 00:39:13'),
-(17, 'anh long dep trai', 'Male', '0812366668', NULL, NULL, '2020-01-08 08:24:06', '2020-01-08 08:24:06'),
 (18, 'longz', 'Male', '0812355554', NULL, NULL, NULL, NULL),
-(19, 'Anh Long Đẹp Trai', 'Male', '0362633796', NULL, NULL, '2020-01-08 23:50:40', '2020-01-08 23:50:40'),
 (20, 'Bùi Thị Thư', 'Female', '0812355553', NULL, NULL, '2020-01-09 01:54:13', '2020-01-09 01:54:13'),
 (21, 'Ngans', 'Male', '0812344445', NULL, NULL, NULL, NULL),
 (22, 'Nguyen Duc Long', 'Male', '0812366669', NULL, NULL, '2020-01-09 02:53:07', '2020-01-09 02:53:07'),
@@ -267,29 +219,12 @@ INSERT INTO `customers` (`id`, `name`, `gender`, `phone`, `email`, `address`, `c
 (29, 'Nguyen Duc Long', 'Male', '0121314152', NULL, NULL, '2020-01-09 19:56:29', '2020-01-09 19:56:29'),
 (30, 'Nguyen Duc Long', 'Male', '0812355588', NULL, NULL, '2020-01-09 19:57:30', '2020-01-09 19:57:30'),
 (31, 'Nguyen Duc Long', 'Male', '0812355532', NULL, NULL, '2020-01-09 20:10:50', '2020-01-09 20:10:50'),
-(32, 'Đạt 09', 'Male', '0812533335', NULL, NULL, '2020-01-09 20:15:06', '2020-01-09 20:15:06'),
-(33, 'Tao Là Đạt', 'Female', '0144444447', NULL, NULL, '2020-01-09 20:16:37', '2020-01-09 20:16:37'),
-(34, 'Tao Là Đạt', 'Male', '0122255556', NULL, NULL, '2020-01-09 20:17:22', '2020-01-09 20:17:22'),
 (35, 'Nguyen Duc Long', 'Male', '0812366663', NULL, NULL, '2020-01-10 05:21:29', '2020-01-10 05:21:29'),
-(36, 'Anh Long Đẹp Trai', 'Male', '0868666668', NULL, NULL, '2020-01-10 11:31:49', '2020-01-10 11:31:49'),
 (37, 'Nguyễn Đức Long', 'Male', '0123456789', NULL, NULL, '2020-01-10 18:46:40', '2020-01-10 18:46:40'),
-(38, 'Anh Long Đẹp Trai', 'Male', '0812355512', NULL, NULL, '2020-01-10 21:44:24', '2020-01-10 21:44:24'),
-(39, 'Anh Long Đẹp Trai', 'Male', '0812355595', NULL, NULL, '2020-01-10 22:32:32', '2020-01-10 22:32:32'),
-(40, 'Anh Long Đẹp Trai', 'Male', '0812355567', NULL, NULL, '2020-01-10 22:33:13', '2020-01-10 22:33:13'),
 (41, 'Nguyen Duc Long', 'Male', '0812355522', NULL, NULL, '2020-01-10 23:31:04', '2020-01-10 23:31:04'),
 (42, 'Nguyen Duc Long', 'Male', '0812355544', NULL, NULL, '2020-01-10 23:32:04', '2020-01-10 23:32:04'),
-(43, 'Anh Long Đẹp Trai', 'Male', '0812312345', NULL, NULL, '2020-01-11 23:33:46', '2020-01-11 23:33:46'),
-(44, 'Anh Long Đẹp Trai', 'Male', '0812351234', NULL, NULL, '2020-01-11 23:36:42', '2020-01-11 23:36:42'),
 (45, 'Nguyen Duc Long', 'Male', '0812355513', NULL, NULL, '2020-01-12 02:40:28', '2020-01-12 02:40:28'),
-(46, 'Anh Long Đẹp Trai', 'Male', '0812355112', NULL, NULL, '2020-01-12 02:44:37', '2020-01-12 02:44:37'),
-(47, 'Anh Long Đẹp Trai', 'Male', '0812355221', NULL, NULL, '2020-01-12 02:47:46', '2020-01-12 02:47:46'),
 (48, 'Nguyen Duc Long', 'Male', '0812355223', NULL, NULL, '2020-01-12 02:48:27', '2020-01-12 02:48:27'),
-(49, 'Anh Long Đẹp Trai', 'Male', '0812355665', NULL, NULL, '2020-01-12 02:50:29', '2020-01-12 02:50:29'),
-(50, 'Anh Long Đẹp Trai', 'Male', '0812355999', NULL, NULL, '2020-01-12 02:51:40', '2020-01-12 02:51:40'),
-(51, 'Anh Long Đẹp Trai', 'Male', '0812355886', NULL, NULL, '2020-01-12 02:52:41', '2020-01-12 02:52:41'),
-(52, 'Anh Long Đẹp Trai', 'Male', '0812311110', NULL, NULL, '2020-01-12 08:51:03', '2020-01-12 08:51:03'),
-(53, 'Anh Long Đẹp Trai', 'Male', '0812377776', NULL, NULL, '2020-01-12 18:35:16', '2020-01-12 18:35:16'),
-(54, 'Anh Long Đẹp Trai', 'Male', '0812333333', NULL, NULL, '2020-01-12 22:48:58', '2020-01-12 22:48:58'),
 (55, 'Nguyen Duc Long', 'Male', '0812322223', NULL, NULL, '2020-01-12 22:51:47', '2020-01-12 22:51:47');
 
 -- --------------------------------------------------------
@@ -314,13 +249,10 @@ CREATE TABLE `detail_imgs` (
 INSERT INTO `detail_imgs` (`id`, `img`, `cat_id`, `pro_id`, `created_at`, `updated_at`) VALUES
 (2, 'images/images_services/haircut1.jpg', 1, NULL, NULL, NULL),
 (3, 'images/images_services/haircut2.jpg', 1, NULL, NULL, NULL),
-(4, 'images/images_services/haircut3.jpg', 1, NULL, NULL, NULL),
 (5, 'images/images_services/hairwash1.jpg', 3, NULL, NULL, NULL),
 (6, 'images/images_services/hairwash2.jpg', 3, NULL, NULL, NULL),
-(7, 'images/images_services/hairwash3.jpg', 3, NULL, NULL, NULL),
 (8, 'images/images_services/color1.jpg', 2, NULL, NULL, NULL),
 (9, 'images/images_services/color2.jpg', 2, NULL, NULL, NULL),
-(10, 'images/images_services/color3.jpg', 2, NULL, NULL, NULL),
 (12, 'images/update-trend1.jpg', 10, NULL, NULL, NULL),
 (13, 'images/update-trend2.png', 10, NULL, NULL, NULL),
 (14, 'images/update-trend3.jpg', 10, NULL, NULL, NULL),
@@ -556,17 +488,17 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `cat_id`, `name`, `description`, `detail`, `qty`, `photo`, `price`, `sale`, `status`, `created_at`, `updated_at`) VALUES
-(1, 4, 'Combo 4 dau goi Kafen chi', 'Tóc bóng mượt,sạch gàu', 'bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,', 20, 'images/images_EM_shop/shampoo_kafen1.jfif', '46.00', 0, 1, NULL, NULL),
-(2, 4, 'Combo 2 dau goi Keratin', 'Óng mượt sạch gàu', 'Óng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàu', 10, 'images/images_EM_shop/shampoo_keratin.jfif', '100.00', 0, 1, NULL, NULL),
-(3, 4, 'Combo 2 dau goi Goldwell', 'sạch gàu', 'sạch gàu,sạch gàu,sạch gàu,sạch gàu,sạch gàu,sạch gàu,sạch gàu', 20, 'images/images_EM_shop/shampoo_goldwell.jpg', '20.00', 0, 1, NULL, NULL),
+(1, 4, 'Dầu gội Demo1', 'Tóc bóng mượt,sạch gàu', 'bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,bóng mượt sạch gàu,', 20, 'images/images_EM_shop/shampoo_kafen1.jfif', '46.00', 0, 1, NULL, NULL),
+(2, 4, 'Dầu gội Demo2', 'Óng mượt sạch gàu', 'Óng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàuÓng mượt sạch gàu', 10, 'images/images_EM_shop/shampoo_keratin.jfif', '100.00', 0, 1, NULL, NULL),
+(3, 4, 'Dầu gội Goldwell', 'sạch gàu', 'sạch gàu,sạch gàu,sạch gàu,sạch gàu,sạch gàu,sạch gàu,sạch gàu', 20, 'images/images_EM_shop/shampoo_goldwell.jpg', '20.00', 0, 1, NULL, NULL),
 (4, 5, 'Mặt nạ CC Menalo 20 miếng từ Nhật Bản', 'sạch mụn', 'sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn,sạch mụn', 100, 'images/images_EM_shop/acne_mask_1.jpg', '10.00', 50, 1, NULL, NULL),
-(5, 6, 'Sản phẩm sữa rửa mặt trị mụn Acerola chiết xuất từ quả cherry', 'sạch mặt sạch mụn', 'sạch mặt sạch mụn,sạch mặt sạch mụn,sạch mặt sạch mụn,sạch mặt sạch mụn', 100, 'images/images_EM_shop/clean_face_2.jfif', '20.00', 10, 1, NULL, NULL),
+(5, 6, 'Sữa rửa mặt trị mụn Acerola chiết xuất từ quả cherry', 'sạch mặt sạch mụn', 'sạch mặt sạch mụn,sạch mặt sạch mụn,sạch mặt sạch mụn,sạch mặt sạch mụn', 100, 'images/images_EM_shop/clean_face_2.jfif', '20.00', 10, 1, NULL, NULL),
 (6, 6, 'Sữa rửa mặt Biotin', 'sạch', ',sạch mịnsạch mịnsạch mịnsạch mịnsạch mịn', 100, 'images/images_EM_shop/shampoo_biotin1.jpg', '20.00', 20, 1, NULL, NULL),
-(7, 7, 'Sản phẩm kem trị mụn Mong bear chiết xuất từ hạt đậu nành', 'sạch mụn', 'sạch mụn.sạch mụn.sạch mụn.sạch mụn.', 300, 'images/images_EM_shop/clean_face_3.jfif', '20.00', 0, 1, NULL, NULL),
-(8, 4, 'Dầu gội cả phèn', 'lắc cái đầu cho sạch gầu', 'sạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầu', 50, 'images/images_EM_shop/shampoo_kafen1.jfif', '2000.00', 0, 1, '2020-02-01 09:09:30', '2020-02-01 09:09:30'),
-(9, 4, 'Dầu gội cả phènsssssss', 'lắc cái đầu cho sạch gầu', 'sạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầu', 50, 'images/images_EM_shop/shampoo_kafen1.jfif', '2000.00', 0, 1, '2020-02-01 09:13:55', '2020-02-01 09:13:55'),
-(12, 4, 'Dầu gội vàng tóc', 'Vàng tóc Vàng luôn cả đầu', 'Vàng tóc Vàng luôn cả đầuVàng tóc Vàng luôn cả đầuVàng tóc Vàng luôn cả đầuVàng tóc Vàng luôn cả đầu', 20, 'images/images_EM_shop/shampoo_goldwell.jpg', '3000.00', 25, 1, '2020-02-01 10:16:43', '2020-02-01 10:16:43'),
-(13, 4, 'Dầu gội vàng tóc aaaaaaaa', 'Vàng tóc Vàng luôn cả đầu', 'Vàng tóc Vàng luôn cả đầuVàng tóc Vàng luôn cả đầuVàng tóc Vàng luôn cả đầuVàng tóc Vàng luôn cả đầu', 20, 'images/images_EM_shop/shampoo_goldwell.jpg', '75.00', 25, 1, '2020-02-01 10:19:21', '2020-02-01 10:19:21');
+(7, 7, 'Kem trị mụn Mong bear chiết xuất từ hạt đậu nành', 'sạch mụn', 'sạch mụn.sạch mụn.sạch mụn.sạch mụn.', 300, 'images/images_EM_shop/clean_face_3.jfif', '20.00', 0, 1, NULL, NULL),
+(8, 4, 'Dầu gội Demo3', 'sạch gầu', 'sạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầu', 50, 'images/images_EM_shop/shampoo_kafen1.jfif', '2000.00', 0, 1, '2020-02-01 09:09:30', '2020-02-01 09:09:30'),
+(9, 4, 'Dầu gội Demo4', 'sạch gầu', 'sạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầusạch gầu là sạch gầu', 50, 'images/images_EM_shop/shampoo_kafen1.jfif', '2000.00', 0, 1, '2020-02-01 09:13:55', '2020-02-01 09:13:55'),
+(12, 4, 'Dầu gội Demo5', 'sạch gàu', 'sạch gàu,sạch gàu,sạch gàu,sạch gàu,sạch gàu,', 20, 'images/images_EM_shop/shampoo_goldwell.jpg', '3000.00', 25, 1, '2020-02-01 10:16:43', '2020-02-01 10:16:43'),
+(13, 4, 'Dầu gội Demo6', 'sạch gàu', 'sạch gàu,sạch gàu,sạch gàu,sạch gàu,sạch gàu,', 20, 'images/images_EM_shop/shampoo_goldwell.jpg', '75.00', 25, 1, '2020-02-01 10:19:21', '2020-02-01 10:19:21');
 
 -- --------------------------------------------------------
 
