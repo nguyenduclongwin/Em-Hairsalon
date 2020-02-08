@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 class EmController extends Controller
 {
     public function home(){
@@ -23,5 +22,30 @@ class EmController extends Controller
     }
     public function emShop(){
         return view('emshop');
+    }
+    public function cart()
+    {
+        return view('cart');
+    }
+    
+    public function updateCart(Request $request)
+    {
+        if ($request->id and $request->quantity) {
+            $cart = session()->get('cart');
+            $cart[$request->id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+            session()->flash('success', 'Cart update successfully');
+        }
+    }
+    public function remove(Request $request)
+    {
+        if ($request->id) {
+            $cart = session()->get('cart');
+            if (isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Cart removed successfully');
+        }
     }
 }

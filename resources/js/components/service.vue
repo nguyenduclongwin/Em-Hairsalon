@@ -81,7 +81,38 @@
           </div>
         </div>
 
-        <div v-for="item in services" :key="item.id" class="row massage-services">
+        <div v-for="item in services" :key="item.id" class="row" style="margin-top:30px;">
+          <div class="col-xl-6 align-self-center">
+            <div class="row images-massage">
+              <div class="col-xl-6 wow slideInLeft" v-for="img in item.img"
+                  :key="img.id">
+                <img :src="img.img" alt="khi_02.jpg" width="100%" />
+              </div>
+              <!-- <div class="col-xl-6" style="margin-top:20px">
+                <img src="images/images_services/khi_02.jpg" alt="khi_02.jpg" width="100%" />
+              </div> -->
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <h3 class="title-content-service-details">{{item.name_cat}}</h3>
+            <table class="table table-bordered table-success">
+              <thead style="background: #171616; color: #fff;">
+                <tr>
+                  <th>Service</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="service in item.service" :key="service.id">
+                  <td>{{service.service}}</td>
+                  <td>{{service.price}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- <div v-for="item in services" :key="item.id" class="row massage-services">
           <div class="col-xl-6">
             <h3 class="title-content-service-details">{{item.name_cat}}</h3>
             <table class="table table-bordered table-success">
@@ -114,7 +145,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 

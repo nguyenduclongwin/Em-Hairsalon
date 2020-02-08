@@ -55,7 +55,7 @@
     
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/7b6477155e.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
     <script src="js/wow.min.js"></script>
 
     <script src="js/owl.carousel.min.js"></script>

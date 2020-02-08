@@ -176,8 +176,9 @@ class ProductController extends BaseController
                 $id => [
                     "name" => $product->name,
                     "quantity" => 1,
-                    "price" => $product->price-($product->price*$product->sale/100),
+                    "price" => ($product->price-($product->price*$product->sale/100)),
                     "photo" => $product->photo
+
                 ]
             ];
             session()->put('cart', $cart);
@@ -194,7 +195,7 @@ class ProductController extends BaseController
         $cart[$id] = [
             "name" => $product->name,
             "quantity" => 1,
-            "price" => $product->price,
+            "price" => ($product->price-($product->price*$product->sale/100)),
             "photo" => $product->photo
         ];
         session()->put('cart', $cart);
@@ -215,25 +216,6 @@ class ProductController extends BaseController
     
     ],'succsessfully');
     }
-    public function updateCart(Request $request)
-    {
-        if ($request->id and $request->quantity) {
-            $cart = session()->get('cart');
-            $cart[$request->id]["quantity"] = $request->quantity;
-            session()->put('cart', $cart);
-            session()->flash('success', 'Cart update successfully');
-        }
-    }
-    public function remove(Request $request)
-    {
-        if ($request->id) {
-            $cart = session()->get('cart');
-            if (isset($cart[$request->id])) {
-                unset($cart[$request->id]);
-                session()->put('cart', $cart);
-            }
-            session()->flash('success', 'Cart removed successfully');
-        }
-    }
+    
 
 }

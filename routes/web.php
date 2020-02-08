@@ -20,7 +20,10 @@ Route::get('/contact','EmController@contact')->name('contact');
 Route::get('/emshop','EmController@emShop')->name('emshop');
 Route::get('/news','EmController@news')->name('news');
 Route::get('/add-to-cart/{id}','API\ProductController@addToCart');
+Route::patch('/update-cart','EmController@updateCart');
+Route::delete('/remove-from-cart','EmController@remove');
 Route::get('/cart','API\ProductController@showCart');
+Route::get('/all-cart','EmController@cart');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

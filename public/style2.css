@@ -147,6 +147,11 @@
   color: #000 !important;
   background: #fff; }
 
+.EMsalon_story {
+  margin-top: 30px; }
+  .EMsalon_story .start_EMsalon_story .title_EMsalon_story {
+    font-family: 'Raleway-Regular'; }
+
 .combo-suggestions {
   padding-top: 50px;
   padding-bottom: 50px; }
@@ -333,6 +338,31 @@
         top: -30px;
         -webkit-transition-duration: 3s;
         transition-duration: 3s; }
+
+/******  2.Services   ******/
+.Em_services .col {
+  padding-left: 0px;
+  padding-right: 0px; }
+.Em_services .title-content-service-details {
+  text-transform: capitalize; }
+.Em_services .services-page {
+  background: #1b1717;
+  color: #fff; }
+  .Em_services .services-page .all-services {
+    font-family: 'Raleway-Regular';
+    text-align: center;
+    padding-top: 150px; }
+    .Em_services .services-page .all-services .title-services-page {
+      margin-top: 20px; }
+    .Em_services .services-page .all-services .services-table {
+      margin-top: 30px; }
+      .Em_services .services-page .all-services .services-table .title-services-item {
+        font-size: 1.5rem;
+        margin-top: 20px; }
+    .Em_services .services-page .all-services .content-hair-cut {
+      margin-top: 50px; }
+.Em_services .service-details {
+  margin-top: 30px; }
 
 .API_map {
   padding-top: 35px; }

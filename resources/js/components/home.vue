@@ -93,6 +93,33 @@
       </div>
     </div>
 
+    <!-- Start the story of EMSalon -->
+    <div class="EMsalon_story">
+        <div class="container">
+            <div class="start_EMsalon_story">
+                <div class="row">
+                    <div class="col-xl-6">
+                    <h2 class="title_EMsalon_story"><span style="font-weight:900;">EM</span> 's story</h2>
+                        <p class="text_EMsalon_story">
+                        EM Hair Salon is a top-ranked professional hair salon located on the beautiful Phan Huy Ich street in Hanoi's old quarter.
+                        Our experienced hair stylist specializes in affordable men's styling, cutting, coloring and perm styling services (see our menu in VN / UK). They are experienced with all colors and hair types, including blonde and balayage.
+                        100% of the profits earned at the salon for vocational training for disadvantaged youth who are studying at REACH, including victims of human trafficking and domestic violence. Since 2004, REACH has helped improve the lives of over 15,000 young people in Vietnam
+                        </p>
+                        <p>Xem them ve trung tam REACH qua
+                            <a href="https://www.facebook.com/pg/HanoiREACH/posts/?ref=page_internal">Facebook</a>
+                            <span>or</span>
+                            <a href="https://www.reach.org.vn/">here</a>
+                        </p>
+                    </div>
+                    <div class="col-xl-6">
+                    <img src="images/images_news/img_start_news.jpg" alt="img_start_news.jpg" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End the story of EMSalon -->
+
     <!-- Start Combo Seggestions-->
 
     <div class="container">
@@ -262,7 +289,7 @@
             </div>
             <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 time-panel-in-ovrly">
               <div class="time-panel wow bounceInUp" data-wow-duration="2.5s" data-wow-delay="0.1s">
-                <h4 class="title-time-panel">Monday</h4>
+                <h4 class="title-time-panel">Sat and Sun</h4>
                 <ul class="list-time-panel">
                   <li class="item">8:00</li>
                   <li class="item">to</li>

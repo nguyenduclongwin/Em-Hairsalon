@@ -70,9 +70,9 @@
             }
         }
         .nav-cart{
-            .review-booked-calendars{
+            // .review-booked-calendars{
                 // margin-right: 10px;
-            }
+            // }
             .link_cart{
                 @include cart;
                 .cart_logo{
@@ -233,7 +233,19 @@
     }
 }
 
+// Start the story of EMSalon
 
+.EMsalon_story{
+    margin-top: 30px;
+    .start_EMsalon_story{
+        .title_EMsalon_story{
+            font-family: 'Raleway-Regular';
+            
+        }
+    }
+}
+
+// End the story of EMSalon
 // Start combo suggestions
 
 .combo-suggestions{
@@ -477,6 +489,51 @@
     
 }
 //End Our Team
+
+/******  2.Services   ******/
+
+// Start services 
+
+.Em_services{
+    // background: #f6f6f9;
+    // background: #f7f7f7;
+    .col{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .title-content-service-details{
+        text-transform: capitalize;;
+    }
+    .services-page{
+        background: #1b1717;
+        color: #fff;
+        .all-services{
+            font-family: 'Raleway-Regular';
+            text-align: center;
+            padding-top: 150px;
+            .title-services-page{
+                margin-top: 20px;
+            }
+            .services-table{
+                margin-top: 30px;
+                .title-services-item{
+                    font-size: 1.5rem;
+                    margin-top: 20px;
+                }
+            }
+            .content-hair-cut{
+                margin-top: 50px;
+            }
+        }
+    }
+    .service-details{
+        margin-top: 30px;
+    }
+    
+    // End services page
+}
+
+
 
 //Api_map
 .API_map{
