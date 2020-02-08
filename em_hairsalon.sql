@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 08, 2020 lúc 02:30 AM
+-- Thời gian đã tạo: Th2 08, 2020 lúc 02:37 AM
 -- Phiên bản máy phục vụ: 10.4.8-MariaDB
 -- Phiên bản PHP: 7.3.11
 
@@ -574,8 +574,8 @@ CREATE TABLE `slides` (
 
 INSERT INTO `slides` (`id`, `img`, `content`, `created_at`, `updated_at`) VALUES
 (1, '/images/image_slide03_02.jpg', 'Welcome to EM hair salon', '2019-12-09 19:09:26', '2019-12-09 19:08:18'),
-(2, '/images/image_slide03_02.jpg', 'Chào mừng đến Em Hairsalon', NULL, NULL),
-(3, '/images/image_slide03_02.jpg', 'anh long dep trai', NULL, '2020-02-02 01:33:50');
+(2, '/images/image_slide03_02.jpg', 'Welcome to EM hair salon2', NULL, NULL),
+(3, '/images/image_slide03_02.jpg', 'Welcome to EM hair salon3', NULL, '2020-02-02 01:33:50');
 
 -- --------------------------------------------------------
 
