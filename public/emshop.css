@@ -1,0 +1,57 @@
+/****** 3.EM shop ******/
+.EM-shop {
+    padding-top: 0; }
+    .EM-shop .real_price {
+      color: #f51f1f;
+      display: inline-block;
+      font-size: 1.25rem; }
+    .EM-shop .information-product {
+      display: inline-block; }
+    .EM-shop img {
+      width: 100%; }
+    .EM-shop .head-store {
+      font-family: 'Raleway-Regular';
+      background: #1b1717;
+      color: #fff;
+      text-align: center; }
+      .EM-shop .head-store .main-title-Em-shop {
+        padding-top: 15px; }
+    .EM-shop .show_new_products {
+      margin-top: 35px;
+      background: #fff; }
+      .EM-shop .show_new_products .name-items {
+        font-size: 1.35rem;
+        color: #bb8c4b;
+        text-align: center; }
+      .EM-shop .show_new_products .male-shampoo-name {
+        font-size: 1rem; }
+      .EM-shop .show_new_products .new_products {
+        padding: 1px 3px;
+        background: red;
+        color: #fff;
+        display: inline-block; }
+    .EM-shop .section_products:hover {
+      box-shadow: 1px 1px 5px #999999;
+      position: relative;
+      top: -1px; }
+    .EM-shop .quantity-item {
+      font-family: 'Heebo-Regular';
+      display: inline-block; }
+      .EM-shop .quantity-item button {
+        padding: 0px 5px; }
+    .EM-shop .sale_products {
+      background: #fff; }
+      .EM-shop .sale_products h3 {
+        font-family: 'Raleway-Regular'; }
+    .EM-shop .booking_now {
+      display: inline-block;
+      background: #f9fafc;
+      border-color: #f0f0f0;
+      padding: 2px 3px; }
+    .EM-shop .booking_now:hover {
+      background: #e2dfdf;
+      color: #fff; }
+    .EM-shop .section_all_product .Emsalon_target {
+      padding-top: 30px;
+      text-align: center;
+      font-family: 'Raleway-Regular'; }

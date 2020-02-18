@@ -1,0 +1,45 @@
+/******  2.Services   ******/
+.Em_services .title-content-service-details {
+    text-transform: capitalize; }
+  .Em_services .services-page {
+    background: #1b1717;
+    color: #fff; }
+    .Em_services .services-page .all-services {
+      font-family: 'Raleway-Regular';
+      text-align: center;
+      padding-top: 20px; }
+      .Em_services .services-page .all-services .title-services-page {
+        margin-top: 20px; }
+      .Em_services .services-page .all-services .services-table {
+        margin-top: 30px; }
+        .Em_services .services-page .all-services .services-table .title-services-item {
+          font-size: 1.5rem;
+          margin-top: 20px; }
+      .Em_services .services-page .all-services .content-hair-cut {
+        margin-top: 50px; }
+  .Em_services .service-details {
+    font-family: 'Raleway-Regular';
+    text-align: center;
+    margin-top: 50px; }
+    .Em_services .service-details .content-service-details {
+      margin-top: 50px;
+      margin-bottom: 20px; }
+      .Em_services .service-details .text-EM {
+        color: #201102;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 4px #000; }
+      .Em_services .service-details .content-service-details .title-content-service-details {
+        padding-top: 20px; }
+    .Em_services .service-details .video-service {
+      text-align: center;
+      margin-top: 50px; }
+    .Em_services .service-details .hair-wash-services {
+      margin-top: 30px; }
+      .Em_services .service-details .hair-wash-services .image-wash-services {
+        padding-top: 50px; }
+    .Em_services .service-details .massage-services {
+      margin-top: 70px; }
+    .Em_services .service-details .images-massage {
+      padding-top: 50px; }
+      .Em_services .service-details .images-massage img {
+        box-shadow: 5px 5px 6px #4d4d4d; }
