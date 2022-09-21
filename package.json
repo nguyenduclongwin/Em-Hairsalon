@@ -27,6 +27,6 @@
         "bootstrap-vue": "^2.4.0",
         "vue-fixed-header": "^3.2.13",
         "vue-owl-carousel": "^2.0.3",
-        "vuetify": "^2.2.6"
+        "vuetify": "^2.6.10"
     }
 }
